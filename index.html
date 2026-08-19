@@ -88,6 +88,7 @@
               <a href="#" class="nav-link active" onclick="event.preventDefault();showPage('home')" style="color:var(--text);font-size:15px;">Home</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('features')" style="color:var(--text);font-size:15px;">Features</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('pricing')" style="color:var(--text);font-size:15px;">Pricing</a>
+              <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('store')" style="color:var(--text);font-size:15px;">Store</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();showPage('dashboard')" style="color:var(--text);font-size:15px;">Dashboard</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobile()" aria-label="Menu" style="display:none;border:none;background:transparent;cursor:pointer;padding:8px;">
@@ -119,6 +120,7 @@
               <a href="#" onclick="event.preventDefault();showPage('home');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Home</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('features');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Features</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('pricing');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Pricing</a>
+              <a href="#" onclick="event.preventDefault();scrollToSection('store');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Store</a>
               <a href="#" onclick="event.preventDefault();showPage('dashboard');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;display:block;text-decoration:none;">Dashboard</a>
               <div style="padding:12px 0;color:var(--text);font-weight:600;display:flex;gap:16px;" data-no-i18n>
                 <span style="opacity:.7;">Language:</span>
@@ -292,6 +294,39 @@
                   <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Unlimited community + 👑 badge</span></div>
                   <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Unlimited future letters</span></div>
                   <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Monthly summary + journal export</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DIGITAL PRODUCTS STORE -->
+        <section id="store" style="background:var(--bg);padding:100px 24px;">
+          <div style="max-width:1200px;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:60px;">
+              <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;"><span data-i18n="Digital Store">Digital Store</span></div>
+              <h2 class="section-title" style="font-weight:900;"><span data-i18n="Gift yourself the tools to grow">Gift yourself the tools to</span> <span class="gradient-text" data-i18n="grow">grow</span></h2>
+              <p style="color:var(--muted);max-width:600px;margin:16px auto 0;font-size:16px;line-height:1.7;"><span data-i18n="Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.">Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.</span></p>
+            </div>
+            <div class="products-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:32px;">
+              <div style="background:var(--card);border:1.5px solid var(--border);border-radius:28px;overflow:hidden;transition:all .3s ease;display:flex;flex-direction:column;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 60px rgba(139,92,246,.15)';this.style.borderColor='var(--accent)'" onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='var(--border)'">
+                <div style="position:relative;background:linear-gradient(135deg,var(--accent),#4c1d95);padding:28px;text-align:center;">
+                  <div style="font-size:12px;font-weight:900;color:#fff;background:rgba(255,255,255,.2);display:inline-block;padding:5px 14px;border-radius:50px;margin-bottom:16px;">eBook</div>
+                  <div style="width:150px;height:210px;margin:0 auto;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.35);overflow:hidden;">
+                    <img src="https://www.checkout-ds24.com/pb/img/merchant_4830506/image/product/6G25CLSU.png?o=440" alt="From Overthinking to Inner Peace eBook" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+                  </div>
+                </div>
+                <div style="padding:28px;display:flex;flex-direction:column;flex:1;">
+                  <h3 style="font-size:20px;font-weight:900;margin-bottom:6px;"><span data-i18n="From Overthinking to Inner Peace">From Overthinking to Inner Peace</span></h3>
+                  <div style="font-size:13px;color:var(--muted);font-weight:600;margin-bottom:14px;">By Hina Sarwar · English · ⭐ 5/5</div>
+                  <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 18px;flex:1;"><span data-i18n="A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.">A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.</span></p>
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                    <span style="font-size:28px;font-weight:900;">$17.99</span>
+                    <span style="font-size:15px;color:var(--muted);text-decoration:line-through;">$47</span>
+                    <span style="font-size:12px;font-weight:800;color:var(--success);background:rgba(16,185,129,.12);padding:3px 10px;border-radius:50px;">SAVE 62%</span>
+                  </div>
+                  <div style="font-size:13px;color:var(--muted);margin-bottom:18px;">🎁 <span data-i18n="Bonus: 2nd eBook free">Bonus: 2nd eBook free</span> · ✅ <span data-i18n="60-day money-back guarantee">60-day money-back guarantee</span></div>
+                  <a href="https://www.checkout-ds24.com/redir/633485/shenoo20/" target="_blank" rel="noopener" class="btn-primary" style="text-align:center;padding:14px;border-radius:14px;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;border:none;cursor:pointer;font-size:15px;text-decoration:none;display:block;">🛒 <span data-i18n="Buy Now">Buy Now</span></a>
                 </div>
               </div>
             </div>
@@ -501,7 +536,7 @@ var translations = {
     'export_locked':'Journal export is a Premium feature.','journal_exported':'Journal exported successfully!',
     'post_btn':'Post','posts':'posts','letter_ready':'Your letter is ready to be written','days_left':'days left',
     'published_note':'✨ Your answer will be published publicly below so everyone can see it',
-    'Log Out':'Log Out','You have been logged out':'You have been logged out','Loading...':'Loading...'
+    'Log Out':'Log Out','You have been logged out':'You have been logged out','Loading...':'Loading...','Digital Store':'Digital Store','Gift yourself the tools to':'Gift yourself the tools to','grow':'grow','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.','Buy Now':'Buy Now','From Overthinking to Inner Peace':'From Overthinking to Inner Peace','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.','Bonus: 2nd eBook free':'Bonus: 2nd eBook free','60-day money-back guarantee':'60-day money-back guarantee'
   },
   ar: {
     'HerScribe':'HerScribe','Reflect · Grow · Thrive':'تأمّل · تطوّر · ازدهر',
@@ -615,7 +650,7 @@ var translations = {
     'Changes to Terms':'التغييرات على الشروط','terms_9':'قد نقوم بتحديث هذه الشروط من وقت لآخر. استمرار استخدام التطبيق بعد نشر التغييرات يُعد قبولًا للشروط المحدثة.',
     'Get in touch':'تواصلي معنا','contact_intro':'لديكِ سؤال أو ملاحظة أو تحتاجين مساعدة؟ يسعدنا سماعك. تواصلي معنا في أي وقت.',
     'Email us':'راسلينا بالبريد','Response time':'وقت الرد','response_time_text':'خلال 48 ساعة','Subscription support':'دعم الاشتراك',
-    'Your Name':'اسمك','Your Email':'بريدك الإلكتروني','Your Message':'رسالتك','Write your message...':'اكتبي رسالتك...','Send Message':'إرسال الرسالة','message_sent':'تم إرسال رسالتك! سنرد عليك خلال 48 ساعة','Log Out':'تسجيل الخروج','You have been logged out':'تم تسجيل خروجك','Loading...':'جارٍ التحميل...',
+    'Your Name':'اسمك','Your Email':'بريدك الإلكتروني','Your Message':'رسالتك','Write your message...':'اكتبي رسالتك...','Send Message':'إرسال الرسالة','message_sent':'تم إرسال رسالتك! سنرد عليك خلال 48 ساعة','Log Out':'تسجيل الخروج','You have been logged out':'تم تسجيل خروجك','Loading...':'جارٍ التحميل...','Digital Store':'متجر رقمي','Gift yourself the tools to':'أهدي نفسك أدوات','grow':'النمو','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'كتب إلكترونية وموارد مختارة لتهدئة ذهنك، وبناء العادات، والعيش بوضوح.','Buy Now':'اشترِ الآن','From Overthinking to Inner Peace':'من التفكير المفرط إلى السلام الداخلي','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'دليل عملي لتهدئة الأفكار المتسارعة، وإسكات الناقد الداخلي، واستعادة ذهن مركّز ومسالم.','Bonus: 2nd eBook free':'مكافأة: كتاب إلكتروني ثانٍ مجانًا','60-day money-back guarantee':'ضمان استرداد المال خلال 60 يومًا',
     'English':'English','العربية':'العربية','Français':'Français'
   },
   fr: {
@@ -730,7 +765,7 @@ var translations = {
     'Changes to Terms':'Modifications des conditions','terms_9':'Nous pouvons mettre à jour ces Conditions de temps à autre. L\'utilisation continue de l\'application après la publication des modifications vaut acceptation des Conditions mises à jour.',
     'Get in touch':'Entrons en contact','contact_intro':'Une question, un retour ou besoin d\'aide ? Nous serions ravies de vous entendre. Contactez-nous à tout moment.',
     'Email us':'Écrivez-nous','Response time':'Délai de réponse','response_time_text':'Sous 48 heures','Subscription support':'Assistance abonnement',
-    'Your Name':'Votre nom','Your Email':'Votre e-mail','Your Message':'Votre message','Write your message...':'Écrivez votre message...','Send Message':'Envoyer le message','message_sent':'Votre message a été envoyé ! Nous vous répondrons sous 48 heures.','Log Out':'Se déconnecter','You have been logged out':'Vous avez été déconnectée','Loading...':'Chargement...',
+    'Your Name':'Votre nom','Your Email':'Votre e-mail','Your Message':'Votre message','Write your message...':'Écrivez votre message...','Send Message':'Envoyer le message','message_sent':'Votre message a été envoyé ! Nous vous répondrons sous 48 heures.','Log Out':'Se déconnecter','You have been logged out':'Vous avez été déconnectée','Loading...':'Chargement...','Digital Store':'Boutique numérique','Gift yourself the tools to':'Offrez-vous les outils pour','grow':'grandir','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Des eBooks et ressources sélectionnés pour apaiser votre esprit, créer des habitudes et vivre avec clarté.','Buy Now':'Acheter maintenant','From Overthinking to Inner Peace':'De la surréflexion à la paix intérieure','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'Un guide pratique pour calmer les pensées qui s\'emballent, faire taire votre critique intérieur et retrouver un esprit concentré et paisible.','Bonus: 2nd eBook free':'Bonus : 2e eBook offert','60-day money-back guarantee':'Garantie de remboursement de 60 jours',
     'English':'English','العربية':'العربية','Français':'Français'
   }
 };
