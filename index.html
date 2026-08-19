@@ -57,7 +57,7 @@
     .section-title{font-size:clamp(28px,4vw,42px)}
     @media (max-width:768px){
       .hero-grid{grid-template-columns:1fr !important}
-      .features-grid,.how-grid,.test-grid,.pricing-grid,.footer-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px !important}
+      .features-grid,.how-grid,.test-grid,.pricing-grid,.footer-grid,.blog-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px !important}
       .features-grid .feature-card{padding:14px !important;border-radius:14px !important}
       .features-grid .feature-card>div:first-child{width:40px !important;height:40px !important;border-radius:11px !important;margin-bottom:10px !important}
       .features-grid .feature-card>div:first-child svg{width:20px !important;height:20px !important}
@@ -103,7 +103,7 @@
       .footer-grid{grid-template-columns:1fr 1fr !important;gap:12px !important}
     }
     @media (min-width:769px) and (max-width:1024px){
-      .features-grid,.how-grid,.test-grid,.footer-grid{grid-template-columns:repeat(2,1fr) !important}
+      .features-grid,.how-grid,.test-grid,.footer-grid,.blog-grid{grid-template-columns:repeat(2,1fr) !important}
     }
   `;
   document.head.appendChild(s);
@@ -129,6 +129,7 @@
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('features')" style="color:var(--text);font-size:15px;">Features</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('pricing')" style="color:var(--text);font-size:15px;">Pricing</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('store')" style="color:var(--text);font-size:15px;">Store</a>
+              <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('blog')" style="color:var(--text);font-size:15px;">Blog</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();showPage('dashboard')" style="color:var(--text);font-size:15px;">Dashboard</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobile()" aria-label="Menu" style="display:none;border:none;background:transparent;cursor:pointer;padding:8px;">
@@ -161,6 +162,7 @@
               <a href="#" onclick="event.preventDefault();scrollToSection('features');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Features</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('pricing');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Pricing</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('store');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Store</a>
+              <a href="#" onclick="event.preventDefault();scrollToSection('blog');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Blog</a>
               <a href="#" onclick="event.preventDefault();showPage('dashboard');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;display:block;text-decoration:none;">Dashboard</a>
               <div style="padding:12px 0;color:var(--text);font-weight:600;display:flex;gap:16px;" data-no-i18n>
                 <span style="opacity:.7;">Language:</span>
@@ -208,6 +210,12 @@
                   <textarea id="hero-reflection" class="input-field" data-ph="Write freely..." style="width:100%;min-height:120px;padding:16px;border-radius:16px;border:1.5px solid var(--border);font-size:15px;resize:none;" placeholder="Write freely..."></textarea>
                   <div style="display:flex;justify-content:flex-end;margin-top:16px;">
                     <button onclick="saveHeroReflection()" class="btn-primary" style="padding:12px 24px;border-radius:12px;background:var(--accent);color:#fff;border:none;cursor:pointer;"><span data-i18n="Save Reflection">Save Reflection</span></button>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;margin-top:14px;">
+                    <span style="font-size:12px;color:var(--muted);font-weight:600;">Share:</span>
+                    <button onclick="shareQuestion('wa')" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:16px;">💬</button>
+                    <button onclick="shareQuestion('x')" title="X / Twitter" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:16px;">🐦</button>
+                    <button onclick="shareQuestion('fb')" title="Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:16px;">📘</button>
                   </div>
                   <p style="font-size:12px;color:var(--muted);margin:8px 0 0;text-align:right;" data-i18n="published_note">✨ Your answer will be published publicly below so everyone can see it</p>
                   
@@ -373,6 +381,46 @@
                   </div>
                   <div style="font-size:13px;color:var(--muted);margin-bottom:18px;">🎁 <span data-i18n="Bonus: 2nd eBook free">Bonus: 2nd eBook free</span> · ✅ <span data-i18n="60-day money-back guarantee">60-day money-back guarantee</span></div>
                   <a href="https://www.checkout-ds24.com/redir/633482/shenoo20/" target="_blank" rel="noopener" class="btn-primary" style="text-align:center;padding:14px;border-radius:14px;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;border:none;cursor:pointer;font-size:15px;text-decoration:none;display:block;">🛒 <span data-i18n="Buy Now">Buy Now</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BLOG -->
+        <section id="blog" style="background:var(--bg);padding:100px 24px;">
+          <div style="max-width:1200px;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:60px;">
+              <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;">From the Blog</div>
+              <h2 class="section-title" style="font-weight:900;">Ideas to help you <span class="gradient-text">reflect & grow</span></h2>
+              <p style="color:var(--muted);max-width:600px;margin:16px auto 0;font-size:16px;line-height:1.7;">Short, practical articles on self-reflection, building calm, and growing without pressure.</p>
+            </div>
+            <div class="blog-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+              <div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 60px rgba(139,92,246,.12)'" onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                <div style="height:170px;background:linear-gradient(135deg,#7c3aed,#c084fc);display:flex;align-items:center;justify-content:center;font-size:56px;">🌿</div>
+                <div style="padding:26px;display:flex;flex-direction:column;flex:1;">
+                  <div style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Mindfulness · 4 min read</div>
+                  <h3 style="font-size:19px;font-weight:800;margin-bottom:10px;line-height:1.4;">How to Quiet a Racing Mind in 5 Minutes</h3>
+                  <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 18px;flex:1;">Your mind doesn't need to be silenced. It needs to be heard. A simple practice you can do before your morning reflection.</p>
+                  <a href="#" onclick="event.preventDefault();openArticle(0)" style="color:var(--accent);font-weight:800;font-size:14px;text-decoration:none;">Read article →</a>
+                </div>
+              </div>
+              <div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 60px rgba(139,92,246,.12)'" onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                <div style="height:170px;background:linear-gradient(135deg,#0ea5e9,#7dd3fc);display:flex;align-items:center;justify-content:center;font-size:56px;">📝</div>
+                <div style="padding:26px;display:flex;flex-direction:column;flex:1;">
+                  <div style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Journaling · 3 min read</div>
+                  <h3 style="font-size:19px;font-weight:800;margin-bottom:10px;line-height:1.4;">Why "No Pressure" Journaling Works Better</h3>
+                  <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 18px;flex:1;">Streak guilt makes us quit. Here's the gentle approach that keeps a habit alive for months — not days.</p>
+                  <a href="#" onclick="event.preventDefault();openArticle(1)" style="color:var(--accent);font-weight:800;font-size:14px;text-decoration:none;">Read article →</a>
+                </div>
+              </div>
+              <div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 60px rgba(139,92,246,.12)'" onmouseleave="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                <div style="height:170px;background:linear-gradient(135deg,#f59e0b,#fbbf24);display:flex;align-items:center;justify-content:center;font-size:56px;">🌅</div>
+                <div style="padding:26px;display:flex;flex-direction:column;flex:1;">
+                  <div style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Habits · 5 min read</div>
+                  <h3 style="font-size:19px;font-weight:800;margin-bottom:10px;line-height:1.4;">The 2-Minute Morning Ritual That Changes Your Day</h3>
+                  <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 18px;flex:1;">One question. One honest sentence. Two minutes. Why the smallest daily ritual creates the biggest shifts.</p>
+                  <a href="#" onclick="event.preventDefault();openArticle(2)" style="color:var(--accent);font-weight:800;font-size:14px;text-decoration:none;">Read article →</a>
                 </div>
               </div>
             </div>
@@ -622,7 +670,7 @@ var translations = {
     'letter_locked':'You have reached the free limit for future letters.',
     'export_locked':'Journal export is a Premium feature.','journal_exported':'Journal exported successfully!',
     'post_btn':'Post','posts':'posts','letter_ready':'Your letter is ready to be written','days_left':'days left',
-    'published_note':'✨ Your answer will be published publicly below so everyone can see it','Show Answers':'Show Answers','Hide Answers':'Hide Answers','No pressure':'No pressure','No streak guilt':'No streak guilt','Enable daily reminder':'Enable daily reminder','Daily reminder on':'Daily reminder on','reminder_enabled':'Daily reminder is on. You\'ll get a gentle nudge each day.','reminder_disabled':'Daily reminder is off.','reminder_denied':'Notifications are blocked. Allow them in your browser to enable reminders.','reminder_not_supported':'Your browser doesn\'t support notifications.','reminder_body':'Your 2-minute reflection is waiting. No pressure — just you. 💜','How are you feeling today?':'How are you feeling today?','mood_subtitle':'One tap. That is all. It takes 2 seconds and builds your emotional picture over time.','Your mood this week':'Your mood this week','mood_week_subtitle':'Last 7 days','mood_saved':'Mood saved','mood_none':'No check-in','mood_1':'Rough','mood_2':'Low','mood_3':'Okay','mood_4':'Good','mood_5':'Great',
+    'published_note':'✨ Your answer will be published publicly below so everyone can see it','Show Answers':'Show Answers','Hide Answers':'Hide Answers','Share:':'Share:','No pressure':'No pressure','No streak guilt':'No streak guilt','Enable daily reminder':'Enable daily reminder','Daily reminder on':'Daily reminder on','reminder_enabled':'Daily reminder is on. You\'ll get a gentle nudge each day.','reminder_disabled':'Daily reminder is off.','reminder_denied':'Notifications are blocked. Allow them in your browser to enable reminders.','reminder_not_supported':'Your browser doesn\'t support notifications.','reminder_body':'Your 2-minute reflection is waiting. No pressure — just you. 💜','How are you feeling today?':'How are you feeling today?','mood_subtitle':'One tap. That is all. It takes 2 seconds and builds your emotional picture over time.','Your mood this week':'Your mood this week','mood_week_subtitle':'Last 7 days','mood_saved':'Mood saved','mood_none':'No check-in','mood_1':'Rough','mood_2':'Low','mood_3':'Okay','mood_4':'Good','mood_5':'Great',
     'Log Out':'Log Out','You have been logged out':'You have been logged out','Loading...':'Loading...','Digital Store':'Digital Store','Gift yourself the tools to':'Gift yourself the tools to','grow':'grow','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.','Buy Now':'Buy Now','From Overthinking to Inner Peace':'From Overthinking to Inner Peace','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.','Bonus: 2nd eBook free':'Bonus: 2nd eBook free','60-day money-back guarantee':'60-day money-back guarantee','Daily Routines of Successful People':'Daily Routines of Successful People','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.','Mastering Stress Without Medication':'Mastering Stress Without Medication','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.'
   },
   ar: {
@@ -685,7 +733,7 @@ var translations = {
     'Connect anonymously with women on the same journey.':'تواصلي مجهولة الهوية مع نساء في نفس الرحلة.','Share something anonymously...':'شاركي شيئًا بشكل مجهول...','Post Anonymously':'نشر بشكل مجهول',
     'posts':'المنشورات','No posts yet. Be the first to share!':'لا توجد منشورات بعد. كوني أول من يشارك!','Comments':'التعليقات','Write a comment...':'اكتبي تعليقًا...','Post':'نشر','With My Name':'باسمي','post_btn':'نشر',
     'All':'الكل','Self-Discovery':'اكتشاف الذات','Growth':'النمو','Relationships':'العلاقات','Anonymous':'مجهول','replies':'ردود','Just now':'الآن فقط','New':'جديد',
-    'Write something first!':'اكتبي شيئًا أولًا!','Your anonymous post has been shared':'تم نشر منشورك المجهول بنجاح','Answer published!':'تم نشر الإجابة!','Your answer has been published!':'تم نشر إجابتك!','Public Answers':'إجابات عامة','answers':'إجابات','No answers yet. Be the first to answer!':'لا توجد إجابات بعد. كن أول من يجيب!','Publish Answer':'نشر الإجابة','comments':'تعليقات','No comments yet. Be the first to share!':'لا توجد تعليقات بعد. كن أول من يشارك!','Comment posted!':'تم نشر التعليق!','Save Reflection':'حفظ التأمل','published_note':'✨ ستُظهر إجابتك علنًا بالأسفل ليراها الجميع','Show Answers':'عرض الإجابات','Hide Answers':'إخفاء الإجابات','No pressure':'بدون ضغط','No streak guilt':'بدون شعور بالذنب','Enable daily reminder':'تفعيل التذكير اليومي','Daily reminder on':'التذكير اليومي مفعّل','reminder_enabled':'التذكير اليومي مفعّل. ستصلك دفعة لطيفة كل يوم.','reminder_disabled':'التذكير اليومي متوقف.','reminder_denied':'الإشعارات محجوبة. اسمحي بها في المتصفح لتفعيل التذكير.','reminder_not_supported':'متصفحك لا يدعم الإشعارات.','reminder_body':'تأملك اليومي لمدة دقيقتين بانتظارك. بدون ضغط — فقط أنتِ. 💜','How are you feeling today?':'كيف تشعرين اليوم؟','mood_subtitle':'لمسة واحدة. هذا كل شيء. تستغرق ثانيتين وتبني صورتك العاطفية مع الوقت.','Your mood this week':'مزاجك هذا الأسبوع','mood_week_subtitle':'آخر 7 أيام','mood_saved':'تم حفظ المزاج','mood_none':'لم تُسجلي','mood_1':'سيء','mood_2':'متعب','mood_3':'عادي','mood_4':'جيد','mood_5':'رائع',
+    'Write something first!':'اكتبي شيئًا أولًا!','Your anonymous post has been shared':'تم نشر منشورك المجهول بنجاح','Answer published!':'تم نشر الإجابة!','Your answer has been published!':'تم نشر إجابتك!','Public Answers':'إجابات عامة','answers':'إجابات','No answers yet. Be the first to answer!':'لا توجد إجابات بعد. كن أول من يجيب!','Publish Answer':'نشر الإجابة','comments':'تعليقات','No comments yet. Be the first to share!':'لا توجد تعليقات بعد. كن أول من يشارك!','Comment posted!':'تم نشر التعليق!','Save Reflection':'حفظ التأمل','published_note':'✨ ستُظهر إجابتك علنًا بالأسفل ليراها الجميع','Show Answers':'عرض الإجابات','Hide Answers':'إخفاء الإجابات','Share:':'مشاركة:','No pressure':'بدون ضغط','No streak guilt':'بدون شعور بالذنب','Enable daily reminder':'تفعيل التذكير اليومي','Daily reminder on':'التذكير اليومي مفعّل','reminder_enabled':'التذكير اليومي مفعّل. ستصلك دفعة لطيفة كل يوم.','reminder_disabled':'التذكير اليومي متوقف.','reminder_denied':'الإشعارات محجوبة. اسمحي بها في المتصفح لتفعيل التذكير.','reminder_not_supported':'متصفحك لا يدعم الإشعارات.','reminder_body':'تأملك اليومي لمدة دقيقتين بانتظارك. بدون ضغط — فقط أنتِ. 💜','How are you feeling today?':'كيف تشعرين اليوم؟','mood_subtitle':'لمسة واحدة. هذا كل شيء. تستغرق ثانيتين وتبني صورتك العاطفية مع الوقت.','Your mood this week':'مزاجك هذا الأسبوع','mood_week_subtitle':'آخر 7 أيام','mood_saved':'تم حفظ المزاج','mood_none':'لم تُسجلي','mood_1':'سيء','mood_2':'متعب','mood_3':'عادي','mood_4':'جيد','mood_5':'رائع',
     'Write a letter to your future self. We\'ll deliver it at the perfect moment.':'اكتبي رسالة إلى ذاتك المستقبلية. سنوصلها لك في اللحظة المثالية.',
     'Subject':'الموضوع','To my future self...':'إلى ذاتي المستقبلية...','Your Letter':'رسالتك','Dear future me... Here\'s what I want you to know...':'عزيزتي أنا في المستقبل... إليك ما أريدك أن تعرفيه...',
     'When to deliver?':'متى نرسل الرسالة؟','6 months from now':'بعد 6 أشهر','1 year from now':'بعد عام واحد','3 years from now':'بعد 3 سنوات','5 years from now':'بعد 5 سنوات','On my next birthday':'في عيد ميلادي القادم',
@@ -800,7 +848,7 @@ var translations = {
     'Connect anonymously with women on the same journey.':'Connectez-vous anonymement avec des femmes sur le même chemin.','Share something anonymously...':'Partagez quelque chose anonymement...','Post Anonymously':'Publier anonymement',
     'posts':'Publications','No posts yet. Be the first to share!':'Aucune publication pour le moment. Soyez la première à partager !','Comments':'Commentaires','Write a comment...':'Écrivez un commentaire...','Post':'Publier','With My Name':'Avec mon nom','post_btn':'Publier',
     'All':'Tout','Self-Discovery':'Découverte de soi','Growth':'Croissance','Relationships':'Relations','Anonymous':'Anonyme','replies':'réponses','Just now':'À l\'instant','New':'Nouveau',
-    'Write something first!':'Écrivez quelque chose d\'abord !','Your anonymous post has been shared':'Votre publication anonyme a été partagée','Answer published!':'Réponse publiée !','Your answer has been published!':'Votre réponse a été publiée !','Public Answers':'Réponses publiques','answers':'réponses','No answers yet. Be the first to answer!':'Aucune réponse pour le moment. Soyez le premier à répondre !','Publish Answer':'Publier la réponse','comments':'commentaires','No comments yet. Be the first to share!':'Aucun commentaire pour le moment. Soyez le premier à partager !','Comment posted!':'Commentaire publié !','Save Reflection':'Enregistrer la réflexion','published_note':'✨ Votre réponse sera publiée publiquement ci-dessous pour que tout le monde puisse la voir','Show Answers':'Afficher les réponses','Hide Answers':'Masquer les réponses','No pressure':'Sans pression','No streak guilt':'Sans culpabilité','Enable daily reminder':'Activer le rappel quotidien','Daily reminder on':'Rappel quotidien activé','reminder_enabled':'Le rappel quotidien est activé. Vous recevrez un petit rappel chaque jour.','reminder_disabled':'Le rappel quotidien est désactivé.','reminder_denied':'Les notifications sont bloquées. Autorisez-les dans votre navigateur pour activer les rappels.','reminder_not_supported':'Votre navigateur ne prend pas en charge les notifications.','reminder_body':'Votre réflexion de 2 minutes vous attend. Sans pression — juste vous. 💜','How are you feeling today?':'Comment vous sentez-vous aujourd\'hui ?','mood_subtitle':'Un seul toucher. C\'est tout. Ça prend 2 secondes et construit votre image émotionnelle au fil du temps.','Your mood this week':'Votre humeur cette semaine','mood_week_subtitle':'7 derniers jours','mood_saved':'Humeur enregistrée','mood_none':'Aucune saisie','mood_1':'Difficile','mood_2':'Bas','mood_3':'OK','mood_4':'Bien','mood_5':'Super',
+    'Write something first!':'Écrivez quelque chose d\'abord !','Your anonymous post has been shared':'Votre publication anonyme a été partagée','Answer published!':'Réponse publiée !','Your answer has been published!':'Votre réponse a été publiée !','Public Answers':'Réponses publiques','answers':'réponses','No answers yet. Be the first to answer!':'Aucune réponse pour le moment. Soyez le premier à répondre !','Publish Answer':'Publier la réponse','comments':'commentaires','No comments yet. Be the first to share!':'Aucun commentaire pour le moment. Soyez le premier à partager !','Comment posted!':'Commentaire publié !','Save Reflection':'Enregistrer la réflexion','published_note':'✨ Votre réponse sera publiée publiquement ci-dessous pour que tout le monde puisse la voir','Show Answers':'Afficher les réponses','Hide Answers':'Masquer les réponses','Share:':'Partager :','No pressure':'Sans pression','No streak guilt':'Sans culpabilité','Enable daily reminder':'Activer le rappel quotidien','Daily reminder on':'Rappel quotidien activé','reminder_enabled':'Le rappel quotidien est activé. Vous recevrez un petit rappel chaque jour.','reminder_disabled':'Le rappel quotidien est désactivé.','reminder_denied':'Les notifications sont bloquées. Autorisez-les dans votre navigateur pour activer les rappels.','reminder_not_supported':'Votre navigateur ne prend pas en charge les notifications.','reminder_body':'Votre réflexion de 2 minutes vous attend. Sans pression — juste vous. 💜','How are you feeling today?':'Comment vous sentez-vous aujourd\'hui ?','mood_subtitle':'Un seul toucher. C\'est tout. Ça prend 2 secondes et construit votre image émotionnelle au fil du temps.','Your mood this week':'Votre humeur cette semaine','mood_week_subtitle':'7 derniers jours','mood_saved':'Humeur enregistrée','mood_none':'Aucune saisie','mood_1':'Difficile','mood_2':'Bas','mood_3':'OK','mood_4':'Bien','mood_5':'Super',
     'Write a letter to your future self. We\'ll deliver it at the perfect moment.':'Écrivez une lettre à votre futur moi. Nous la livrerons au moment parfait.',
     'Subject':'Sujet','To my future self...':'À mon futur moi...','Your Letter':'Votre lettre','Dear future me... Here\'s what I want you to know...':'Cher futur moi... Voici ce que je veux que tu saches...',
     'When to deliver?':'Quand livrer ?','6 months from now':'Dans 6 mois','1 year from now':'Dans 1 an','3 years from now':'Dans 3 ans','5 years from now':'Dans 5 ans','On my next birthday':'À mon prochain anniversaire',
@@ -2092,6 +2140,12 @@ c.innerHTML = `
         <div style="display:flex;justify-content:flex-end;margin-top:16px;">
           <button onclick="saveDashReflection()" class="btn-primary" style="padding:12px 24px;border-radius:12px;background:var(--accent);color:#fff;border:none;cursor:pointer;">` + t('Save Reflection') + `</button>
         </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:14px;">
+          <span style="font-size:12px;color:var(--muted);font-weight:600;">` + t('Share:') + `</span>
+          <button onclick="shareQuestion('wa')" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:16px;">💬</button>
+          <button onclick="shareQuestion('x')" title="X / Twitter" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:16px;">🐦</button>
+          <button onclick="shareQuestion('fb')" title="Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:16px;">📘</button>
+        </div>
         <p style="font-size:12px;color:var(--muted);margin:8px 0 0;text-align:right;">` + t('published_note') + `</p>
         
         <div style="margin-top:24px;border-top:1.5px solid var(--border);padding-top:20px;">
@@ -2152,6 +2206,70 @@ function saveDashReflection(){
   ta.value = '';
   var alist = document.getElementById('dash-answers-list');
   if(alist){ alist.style.display = 'block'; var abtn = document.getElementById('dash-answers-toggle'); if(abtn) abtn.innerHTML = t('Hide Answers') + ' 🙈'; }
+}
+
+function shareQuestion(platform){
+  var q = dailyQuestionText();
+  var text = '"' + q + '" — HerScribe: 2 minutes a day, no pressure. ' + location.origin + location.pathname;
+  var url = location.origin + location.pathname;
+  var link = '';
+  if(platform === 'wa') link = 'https://wa.me/?text=' + encodeURIComponent(text);
+  else if(platform === 'x') link = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
+  else if(platform === 'fb') link = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) + '&quote=' + encodeURIComponent(q);
+  if(link) window.open(link, '_blank', 'width=600,height=500');
+}
+
+var ARTICLES = [
+  {
+    cat:'Mindfulness', read:'4 min read', title:'How to Quiet a Racing Mind in 5 Minutes',
+    body:[
+      {h:'Your mind isn\u2019t broken. It\u2019s loud.', p:'Racing thoughts feel like a problem to solve. But the fastest way to calm them isn\u2019t to force them away \u2014 it\u2019s to give them somewhere to land. Writing is that place.'},
+      {h:'The 5-minute practice', p:'Sit quietly with your morning question. Before you answer, write down the three thoughts that arrived with you \u2014 the worries, the to-dos, the repeats. Name them. That\u2019s it. Naming a thought takes away half its power.'},
+      {h:'Why this works', p:'When a thought is stuck inside your head, it loops. The moment it\u2019s on paper, it becomes an object you can look at instead of a noise you\u2019re trapped inside. This is why a daily reflection habit is so effective \u2014 not because it solves everything, but because it gives your mind a daily place to empty out.'},
+      {h:'Start tomorrow', p:'Two minutes is enough. One question, one honest sentence. Come back tomorrow. That consistency \u2014 not intensity \u2014 is what quiets a busy mind over time.'}
+    ]
+  },
+  {
+    cat:'Journaling', read:'3 min read', title:'Why "No Pressure" Journaling Works Better',
+    body:[
+      {h:'Streak guilt kills habits', p:'Most apps push streaks, badges, and "don\u2019t break the chain". For many people that works. For just as many, it creates guilt \u2014 and guilt makes you avoid the very thing that helps you.'},
+      {h:'The gentle alternative', p:'What if missing a day meant nothing? What if the habit is flexible, forgiving, and there for you whenever you show up? Research on habit formation shows that consistency matters \u2014 but self-compassion matters more. People who forgive themselves for missing a day are more likely to keep going long-term.'},
+      {h:'How to build a no-pressure habit', p:'Pick a tiny ritual: one question, one sentence. Do it when you can. If you miss a day, skip the guilt and just come back. The goal isn\u2019t a perfect calendar \u2014 it\u2019s a practice that stays with you for life.'},
+      {h:'Your move', p:'Try it for 7 days. No pressure, no streak guilt \u2014 just show up when you can. You might be surprised how much more you actually write.'}
+    ]
+  },
+  {
+    cat:'Habits', read:'5 min read', title:'The 2-Minute Morning Ritual That Changes Your Day',
+    body:[
+      {h:'Why 2 minutes?', p:'The best habit is the one you actually keep. Two minutes is small enough that you\u2019ll never find a reason to skip it, and meaningful enough that it changes how you start your day.'},
+      {h:'The ritual', p:'Every morning: read the day\u2019s question, take one breath, write one honest sentence. That\u2019s it. The question gives your mind a direction. The breath settles your nervous system. The sentence gives your feelings a voice.'},
+      {h:'What compounds', p:'A single sentence reveals little. But 30 sentences \u2014 one per day \u2014 reveal patterns: what energizes you, what drains you, what keeps coming up. This is how small daily reflections become a mirror you didn\u2019t know you needed.'},
+      {h:'Start tonight', p:'Don\u2019t wait for Monday. Open HerScribe tonight, answer tomorrow morning\u2019s question, and see how different the day feels when you begin with intention instead of reaction.'}
+    ]
+  }
+];
+
+function openArticle(index){
+  var a = ARTICLES[index];
+  if(!a) return;
+  var body = a.body.map(function(s){
+    return '<h3 style="font-size:18px;font-weight:800;margin:0 0 10px;color:var(--text);">' + s.h + '</h3><p style="font-size:15px;color:var(--muted);line-height:1.8;margin:0 0 20px;">' + s.p + '</p>';
+  }).join('');
+  var modal = document.getElementById('article-modal');
+  document.getElementById('article-body').innerHTML =
+    '<div style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">' + a.cat + ' · ' + a.read + '</div>' +
+    '<h2 style="font-size:26px;font-weight:900;margin:0 0 20px;color:var(--text);">' + a.title + '</h2>' +
+    body +
+    '<div style="margin-top:24px;padding-top:20px;border-top:1.5px solid var(--border);text-align:center;">' +
+      '<button onclick="showPage(\'signup\')" class="btn-primary" style="padding:14px 32px;border-radius:50px;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;border:none;cursor:pointer;font-size:15px;font-weight:800;">Start your 2-minute ritual →</button>' +
+    '</div>';
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeArticle(){
+  document.getElementById('article-modal').style.display = 'none';
+  document.body.style.overflow = '';
 }
 
 function loadDashAnswers(){
@@ -3015,5 +3133,12 @@ function exportJournal(){
   }
 })();
 </script>
+
+<div id="article-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,10,40,.6);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)closeArticle()">
+  <div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:32px;position:relative;">
+    <button onclick="closeArticle()" style="position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:16px;font-weight:800;color:var(--muted);">✕</button>
+    <div id="article-body"></div>
+  </div>
+</div>
 </body>
 </html>
