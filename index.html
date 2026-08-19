@@ -57,11 +57,26 @@
     .section-title{font-size:clamp(28px,4vw,42px)}
     @media (max-width:768px){
       .hero-grid{grid-template-columns:1fr !important}
-      .features-grid,.how-grid,.test-grid,.pricing-grid,.products-grid,.footer-grid{grid-template-columns:repeat(2,1fr) !important;gap:14px !important}
-      .features-grid .feature-card{padding:18px !important}
-      .products-grid>div{padding:0 !important;border-radius:18px !important}
-      .products-grid>div>div:last-child{padding:16px !important}
-      .pricing-grid>div{padding:24px 20px !important}
+      .features-grid,.how-grid,.test-grid,.pricing-grid,.footer-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px !important}
+      .features-grid .feature-card{padding:14px !important;border-radius:14px !important}
+      .features-grid .feature-card>div:first-child{width:40px !important;height:40px !important;border-radius:11px !important;margin-bottom:10px !important}
+      .features-grid .feature-card>div:first-child svg{width:20px !important;height:20px !important}
+      .features-grid .feature-card h3{font-size:15px !important;margin-bottom:4px !important}
+      .features-grid .feature-card p{font-size:12px !important;line-height:1.45 !important}
+      .products-grid{grid-template-columns:1fr !important;gap:16px !important}
+      .products-grid>div{flex-direction:row !important;align-items:stretch !important;border-radius:16px !important}
+      .products-grid>div>div:first-child{width:110px !important;flex-shrink:0;padding:12px !important;display:flex !important;flex-direction:column;justify-content:center}
+      .products-grid>div>div:first-child>div:last-child{width:78px !important;height:112px !important}
+      .products-grid>div>div:last-child{padding:14px !important;flex:1;min-width:0}
+      .products-grid>div>div:last-child h3{font-size:16px !important}
+      .products-grid>div>div:last-child>div:nth-child(2){font-size:12px !important;margin-bottom:8px !important}
+      .products-grid>div>div:last-child p{font-size:13px !important;margin-bottom:10px !important}
+      .products-grid>div>div:last-child>div:nth-child(4){margin-bottom:8px !important}
+      .products-grid>div>div:last-child>div:nth-child(4)>span:first-child{font-size:22px !important}
+      .products-grid>div>div:last-child>div:nth-child(5){font-size:12px !important;margin-bottom:12px !important}
+      .pricing-grid>div{padding:20px 16px !important;border-radius:20px !important}
+      .pricing-grid>div>div:nth-child(2){font-size:42px !important}
+      .pricing-grid>div>div:nth-child(3){padding:12px !important;margin:14px 0 !important}
       .auth-bg-side,.nav-desktop{display:none !important}
       .mobile-menu-btn{display:flex !important}
       .auth-grid{grid-template-columns:1fr !important}
@@ -78,13 +93,13 @@
       #page-dashboard .dash-answers-item{grid-template-columns:1fr !important}
     }
     @media (max-width:400px){
-      .features-grid,.how-grid,.test-grid,.products-grid,.pricing-grid{grid-template-columns:repeat(2,1fr) !important;gap:10px !important}
-      .features-grid .feature-card{padding:14px !important}
-      .features-grid .feature-card h3{font-size:15px !important}
-      .features-grid .feature-card p{font-size:12px !important}
+      .features-grid,.how-grid,.test-grid,.pricing-grid{grid-template-columns:repeat(2,1fr) !important;gap:10px !important}
+      .features-grid .feature-card{padding:12px !important}
+      .products-grid>div>div:first-child{width:96px !important;padding:10px !important}
+      .products-grid>div>div:first-child>div:last-child{width:66px !important;height:96px !important}
       .products-grid>div>div:last-child{padding:12px !important}
-      .pricing-grid>div{padding:18px 14px !important}
-      .pricing-grid>div>div:nth-child(2){font-size:38px !important}
+      .pricing-grid>div{padding:16px 12px !important}
+      .pricing-grid>div>div:nth-child(2){font-size:34px !important}
       .footer-grid{grid-template-columns:1fr 1fr !important;gap:12px !important}
     }
     @media (min-width:769px) and (max-width:1024px){
