@@ -210,11 +210,14 @@
                   <p style="font-size:12px;color:var(--muted);margin:8px 0 0;text-align:right;" data-i18n="published_note">✨ Your answer will be published publicly below so everyone can see it</p>
                   
                   <div style="margin-top:24px;border-top:1.5px solid var(--border);padding-top:20px;">
-                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:10px;flex-wrap:wrap;">
                       <h4 style="font-size:16px;font-weight:800;color:var(--text);">💬 <span data-i18n="Public Answers">Public Answers</span></h4>
-                      <span id="hero-answers-count" style="font-size:13px;color:var(--muted);font-weight:600;">0 <span data-i18n="answers">answers</span></span>
+                      <div style="display:flex;align-items:center;gap:12px;">
+                        <span id="hero-answers-count" style="font-size:13px;color:var(--muted);font-weight:600;">0 <span data-i18n="answers">answers</span></span>
+                        <button id="hero-answers-toggle" onclick="toggleHeroAnswers()" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1.5px solid var(--accent);background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;">👁 <span data-i18n="Show Answers">Show Answers</span></button>
+                      </div>
                     </div>
-                    <div id="hero-answers-list" style="max-height:400px;overflow-y:auto;margin-bottom:8px;"></div>
+                    <div id="hero-answers-list" style="max-height:400px;overflow-y:auto;margin-bottom:8px;display:none;"></div>
                   </div>
                 </div>
               </div>
@@ -615,7 +618,7 @@ var translations = {
     'letter_locked':'You have reached the free limit for future letters.',
     'export_locked':'Journal export is a Premium feature.','journal_exported':'Journal exported successfully!',
     'post_btn':'Post','posts':'posts','letter_ready':'Your letter is ready to be written','days_left':'days left',
-    'published_note':'✨ Your answer will be published publicly below so everyone can see it',
+    'published_note':'✨ Your answer will be published publicly below so everyone can see it','Show Answers':'Show Answers','Hide Answers':'Hide Answers',
     'Log Out':'Log Out','You have been logged out':'You have been logged out','Loading...':'Loading...','Digital Store':'Digital Store','Gift yourself the tools to':'Gift yourself the tools to','grow':'grow','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.','Buy Now':'Buy Now','From Overthinking to Inner Peace':'From Overthinking to Inner Peace','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.','Bonus: 2nd eBook free':'Bonus: 2nd eBook free','60-day money-back guarantee':'60-day money-back guarantee','Daily Routines of Successful People':'Daily Routines of Successful People','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.','Mastering Stress Without Medication':'Mastering Stress Without Medication','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.'
   },
   ar: {
@@ -678,7 +681,7 @@ var translations = {
     'Connect anonymously with women on the same journey.':'تواصلي مجهولة الهوية مع نساء في نفس الرحلة.','Share something anonymously...':'شاركي شيئًا بشكل مجهول...','Post Anonymously':'نشر بشكل مجهول',
     'posts':'المنشورات','No posts yet. Be the first to share!':'لا توجد منشورات بعد. كوني أول من يشارك!','Comments':'التعليقات','Write a comment...':'اكتبي تعليقًا...','Post':'نشر','With My Name':'باسمي','post_btn':'نشر',
     'All':'الكل','Self-Discovery':'اكتشاف الذات','Growth':'النمو','Relationships':'العلاقات','Anonymous':'مجهول','replies':'ردود','Just now':'الآن فقط','New':'جديد',
-    'Write something first!':'اكتبي شيئًا أولًا!','Your anonymous post has been shared':'تم نشر منشورك المجهول بنجاح','Answer published!':'تم نشر الإجابة!','Your answer has been published!':'تم نشر إجابتك!','Public Answers':'إجابات عامة','answers':'إجابات','No answers yet. Be the first to answer!':'لا توجد إجابات بعد. كن أول من يجيب!','Publish Answer':'نشر الإجابة','comments':'تعليقات','No comments yet. Be the first to share!':'لا توجد تعليقات بعد. كن أول من يشارك!','Comment posted!':'تم نشر التعليق!','Save Reflection':'حفظ التأمل','published_note':'✨ ستُظهر إجابتك علنًا بالأسفل ليراها الجميع',
+    'Write something first!':'اكتبي شيئًا أولًا!','Your anonymous post has been shared':'تم نشر منشورك المجهول بنجاح','Answer published!':'تم نشر الإجابة!','Your answer has been published!':'تم نشر إجابتك!','Public Answers':'إجابات عامة','answers':'إجابات','No answers yet. Be the first to answer!':'لا توجد إجابات بعد. كن أول من يجيب!','Publish Answer':'نشر الإجابة','comments':'تعليقات','No comments yet. Be the first to share!':'لا توجد تعليقات بعد. كن أول من يشارك!','Comment posted!':'تم نشر التعليق!','Save Reflection':'حفظ التأمل','published_note':'✨ ستُظهر إجابتك علنًا بالأسفل ليراها الجميع','Show Answers':'عرض الإجابات','Hide Answers':'إخفاء الإجابات',
     'Write a letter to your future self. We\'ll deliver it at the perfect moment.':'اكتبي رسالة إلى ذاتك المستقبلية. سنوصلها لك في اللحظة المثالية.',
     'Subject':'الموضوع','To my future self...':'إلى ذاتي المستقبلية...','Your Letter':'رسالتك','Dear future me... Here\'s what I want you to know...':'عزيزتي أنا في المستقبل... إليك ما أريدك أن تعرفيه...',
     'When to deliver?':'متى نرسل الرسالة؟','6 months from now':'بعد 6 أشهر','1 year from now':'بعد عام واحد','3 years from now':'بعد 3 سنوات','5 years from now':'بعد 5 سنوات','On my next birthday':'في عيد ميلادي القادم',
@@ -793,7 +796,7 @@ var translations = {
     'Connect anonymously with women on the same journey.':'Connectez-vous anonymement avec des femmes sur le même chemin.','Share something anonymously...':'Partagez quelque chose anonymement...','Post Anonymously':'Publier anonymement',
     'posts':'Publications','No posts yet. Be the first to share!':'Aucune publication pour le moment. Soyez la première à partager !','Comments':'Commentaires','Write a comment...':'Écrivez un commentaire...','Post':'Publier','With My Name':'Avec mon nom','post_btn':'Publier',
     'All':'Tout','Self-Discovery':'Découverte de soi','Growth':'Croissance','Relationships':'Relations','Anonymous':'Anonyme','replies':'réponses','Just now':'À l\'instant','New':'Nouveau',
-    'Write something first!':'Écrivez quelque chose d\'abord !','Your anonymous post has been shared':'Votre publication anonyme a été partagée','Answer published!':'Réponse publiée !','Your answer has been published!':'Votre réponse a été publiée !','Public Answers':'Réponses publiques','answers':'réponses','No answers yet. Be the first to answer!':'Aucune réponse pour le moment. Soyez le premier à répondre !','Publish Answer':'Publier la réponse','comments':'commentaires','No comments yet. Be the first to share!':'Aucun commentaire pour le moment. Soyez le premier à partager !','Comment posted!':'Commentaire publié !','Save Reflection':'Enregistrer la réflexion','published_note':'✨ Votre réponse sera publiée publiquement ci-dessous pour que tout le monde puisse la voir',
+    'Write something first!':'Écrivez quelque chose d\'abord !','Your anonymous post has been shared':'Votre publication anonyme a été partagée','Answer published!':'Réponse publiée !','Your answer has been published!':'Votre réponse a été publiée !','Public Answers':'Réponses publiques','answers':'réponses','No answers yet. Be the first to answer!':'Aucune réponse pour le moment. Soyez le premier à répondre !','Publish Answer':'Publier la réponse','comments':'commentaires','No comments yet. Be the first to share!':'Aucun commentaire pour le moment. Soyez le premier à partager !','Comment posted!':'Commentaire publié !','Save Reflection':'Enregistrer la réflexion','published_note':'✨ Votre réponse sera publiée publiquement ci-dessous pour que tout le monde puisse la voir','Show Answers':'Afficher les réponses','Hide Answers':'Masquer les réponses',
     'Write a letter to your future self. We\'ll deliver it at the perfect moment.':'Écrivez une lettre à votre futur moi. Nous la livrerons au moment parfait.',
     'Subject':'Sujet','To my future self...':'À mon futur moi...','Your Letter':'Votre lettre','Dear future me... Here\'s what I want you to know...':'Cher futur moi... Voici ce que je veux que tu saches...',
     'When to deliver?':'Quand livrer ?','6 months from now':'Dans 6 mois','1 year from now':'Dans 1 an','3 years from now':'Dans 3 ans','5 years from now':'Dans 5 ans','On my next birthday':'À mon prochain anniversaire',
@@ -1095,6 +1098,8 @@ function saveHeroReflection(){
   
   showToast(t('Your answer has been published!') + ' 💜','success');
   ta.value = '';
+  var alist = document.getElementById('hero-answers-list');
+  if(alist){ alist.style.display = 'block'; var abtn = document.getElementById('hero-answers-toggle'); if(abtn) abtn.innerHTML = t('Hide Answers') + ' 🙈'; }
 }
 
 // ==========================================
@@ -1875,11 +1880,14 @@ c.innerHTML = `
         <p style="font-size:12px;color:var(--muted);margin:8px 0 0;text-align:right;">` + t('published_note') + `</p>
         
         <div style="margin-top:24px;border-top:1.5px solid var(--border);padding-top:20px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:10px;flex-wrap:wrap;">
             <h4 style="font-size:16px;font-weight:800;">💬 ` + t('Public Answers') + `</h4>
-            <span id="dash-answers-count" style="font-size:13px;color:var(--muted);font-weight:600;">0 ` + t('answers') + `</span>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span id="dash-answers-count" style="font-size:13px;color:var(--muted);font-weight:600;">0 ` + t('answers') + `</span>
+              <button id="dash-answers-toggle" onclick="toggleDashAnswers()" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1.5px solid var(--accent);background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;">👁 ` + t('Show Answers') + `</button>
+            </div>
           </div>
-          <div id="dash-answers-list" style="max-height:400px;overflow-y:auto;"></div>
+          <div id="dash-answers-list" style="max-height:400px;overflow-y:auto;display:none;"></div>
         </div>
       </div>
       <div style="background:linear-gradient(135deg,var(--accent-soft),var(--accent2-soft));border:1.5px solid var(--border);border-radius:24px;padding:28px;">
@@ -1927,6 +1935,8 @@ function saveDashReflection(){
 
   showToast(t('Your answer has been published!') + ' 💜','success');
   ta.value = '';
+  var alist = document.getElementById('dash-answers-list');
+  if(alist){ alist.style.display = 'block'; var abtn = document.getElementById('dash-answers-toggle'); if(abtn) abtn.innerHTML = t('Hide Answers') + ' 🙈'; }
 }
 
 function loadDashAnswers(){
@@ -1969,6 +1979,26 @@ function loadDashAnswers(){
     list.innerHTML = html;
     if(count) count.textContent = answers.length + ' ' + t('answers');
   });
+}
+
+function toggleHeroAnswers(){
+  var list = document.getElementById('hero-answers-list');
+  var btn = document.getElementById('hero-answers-toggle');
+  if(!list) return;
+  var hidden = list.style.display === 'none';
+  list.style.display = hidden ? 'block' : 'none';
+  if(btn) btn.innerHTML = hidden ? (t('Hide Answers') + ' 🙈') : ('👁 ' + t('Show Answers'));
+  if(hidden) loadHeroAnswers();
+}
+
+function toggleDashAnswers(){
+  var list = document.getElementById('dash-answers-list');
+  var btn = document.getElementById('dash-answers-toggle');
+  if(!list) return;
+  var hidden = list.style.display === 'none';
+  list.style.display = hidden ? 'block' : 'none';
+  if(btn) btn.innerHTML = hidden ? (t('Hide Answers') + ' 🙈') : ('👁 ' + t('Show Answers'));
+  if(hidden) loadDashAnswers();
 }
 
 // ==========================================
