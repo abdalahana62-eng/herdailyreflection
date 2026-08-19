@@ -499,7 +499,7 @@ var translations = {
     'export_locked':'Journal export is a Premium feature.','journal_exported':'Journal exported successfully!',
     'post_btn':'Post','posts':'posts','letter_ready':'Your letter is ready to be written','days_left':'days left',
     'published_note':'✨ Your answer will be published publicly below so everyone can see it',
-    'Log Out':'Log Out','You have been logged out':'You have been logged out'
+    'Log Out':'Log Out','You have been logged out':'You have been logged out','Loading...':'Loading...'
   },
   ar: {
     'Her Daily Reflection':'تأملها اليومي','Reflect · Grow · Thrive':'تأمّل · تطوّر · ازدهر',
@@ -613,7 +613,7 @@ var translations = {
     'Changes to Terms':'التغييرات على الشروط','terms_9':'قد نقوم بتحديث هذه الشروط من وقت لآخر. استمرار استخدام التطبيق بعد نشر التغييرات يُعد قبولًا للشروط المحدثة.',
     'Get in touch':'تواصلي معنا','contact_intro':'لديكِ سؤال أو ملاحظة أو تحتاجين مساعدة؟ يسعدنا سماعك. تواصلي معنا في أي وقت.',
     'Email us':'راسلينا بالبريد','Response time':'وقت الرد','response_time_text':'خلال 48 ساعة','Subscription support':'دعم الاشتراك',
-    'Your Name':'اسمك','Your Email':'بريدك الإلكتروني','Your Message':'رسالتك','Write your message...':'اكتبي رسالتك...','Send Message':'إرسال الرسالة','message_sent':'تم إرسال رسالتك! سنرد عليك خلال 48 ساعة','Log Out':'تسجيل الخروج','You have been logged out':'تم تسجيل خروجك',
+    'Your Name':'اسمك','Your Email':'بريدك الإلكتروني','Your Message':'رسالتك','Write your message...':'اكتبي رسالتك...','Send Message':'إرسال الرسالة','message_sent':'تم إرسال رسالتك! سنرد عليك خلال 48 ساعة','Log Out':'تسجيل الخروج','You have been logged out':'تم تسجيل خروجك','Loading...':'جارٍ التحميل...',
     'English':'English','العربية':'العربية','Français':'Français'
   },
   fr: {
@@ -728,7 +728,7 @@ var translations = {
     'Changes to Terms':'Modifications des conditions','terms_9':'Nous pouvons mettre à jour ces Conditions de temps à autre. L\'utilisation continue de l\'application après la publication des modifications vaut acceptation des Conditions mises à jour.',
     'Get in touch':'Entrons en contact','contact_intro':'Une question, un retour ou besoin d\'aide ? Nous serions ravies de vous entendre. Contactez-nous à tout moment.',
     'Email us':'Écrivez-nous','Response time':'Délai de réponse','response_time_text':'Sous 48 heures','Subscription support':'Assistance abonnement',
-    'Your Name':'Votre nom','Your Email':'Votre e-mail','Your Message':'Votre message','Write your message...':'Écrivez votre message...','Send Message':'Envoyer le message','message_sent':'Votre message a été envoyé ! Nous vous répondrons sous 48 heures.','Log Out':'Se déconnecter','You have been logged out':'Vous avez été déconnectée',
+    'Your Name':'Votre nom','Your Email':'Votre e-mail','Your Message':'Votre message','Write your message...':'Écrivez votre message...','Send Message':'Envoyer le message','message_sent':'Votre message a été envoyé ! Nous vous répondrons sous 48 heures.','Log Out':'Se déconnecter','You have been logged out':'Vous avez été déconnectée','Loading...':'Chargement...',
     'English':'English','العربية':'العربية','Français':'Français'
   }
 };
@@ -936,7 +936,7 @@ function updateStreak(user){
 
 function countUnlockedBadges(user){
   var streak = computeStreak(user);
-  var answers = getPublicAnswers();
+  var published = (user.reflections || []).length;
   var daysSinceJoin = Math.floor((Date.now() - new Date(user.joinDateISO || user.joinDate || Date.now()).getTime()) / 86400000);
   var checks = [
     user.entries >= 1,
@@ -946,7 +946,7 @@ function countUnlockedBadges(user){
     user.entries >= 100,
     daysSinceJoin >= 365,
     user.words >= 5000,
-    answers.length >= 5
+    published >= 5
   ];
   var count = 0;
   checks.forEach(function(c){ if(c) count++; });
@@ -969,19 +969,15 @@ function saveHeroReflection(){
   saveUserData(user);
   
   // Publish the answer publicly so everyone can see it
-  var answers = getPublicAnswers();
-  answers.push({
-    id: 'a' + Date.now(),
+  addPublicAnswer({
     name: user.name || 'Anonymous',
     text: ta.value.trim(),
     date: new Date().toISOString(),
     likes: []
-  });
-  savePublicAnswers(answers);
+  }, loadHeroAnswers);
   
   showToast(t('Your answer has been published!') + ' 💜','success');
   ta.value = '';
-  loadHeroAnswers();
 }
 
 // ==========================================
@@ -998,66 +994,106 @@ function savePublicComments(comments){
   localStorage.setItem('hdr_public_comments', JSON.stringify(comments));
 }
 
-function getPublicAnswers(){
-  var saved = localStorage.getItem('hdr_public_answers');
-  if(!saved) return [];
-  return JSON.parse(saved);
+function supabaseFetch(path, options){
+  var headers = {
+    'apikey': SUPABASE_ANON_KEY,
+    'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+    'Content-Type': 'application/json'
+  };
+  if(options && options.body) headers['Prefer'] = 'return=representation';
+  return fetch(SUPABASE_URL + path, Object.assign({headers: headers}, options || {}));
 }
 
-function savePublicAnswers(answers){
-  localStorage.setItem('hdr_public_answers', JSON.stringify(answers));
+function getPublicAnswers(callback){
+  supabaseFetch('/rest/v1/public_answers?select=*&order=id.asc')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if(callback) callback(Array.isArray(data) ? data : []);
+    })
+    .catch(function(){
+      if(callback) callback([]);
+    });
+}
+
+function addPublicAnswer(answer, callback){
+  supabaseFetch('/rest/v1/public_answers', {
+    method: 'POST',
+    body: JSON.stringify({name: answer.name, text: answer.text, date: answer.date, likes: answer.likes || []})
+  }).then(function(){
+    if(callback) callback();
+  }).catch(function(){
+    if(callback) callback();
+  });
+}
+
+function updateAnswerLikes(id, likes, callback){
+  supabaseFetch('/rest/v1/public_answers?id=eq.' + id, {
+    method: 'PATCH',
+    body: JSON.stringify({likes: likes})
+  }).then(function(){
+    if(callback) callback();
+  }).catch(function(){
+    if(callback) callback();
+  });
 }
 
 function loadHeroAnswers(){
-  var answers = getPublicAnswers();
   var list = document.getElementById('hero-answers-list');
   var count = document.getElementById('hero-answers-count');
   
   if(!list) return;
   
-  if(answers.length === 0){
-    list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('No answers yet. Be the first to answer!') + '</div>';
-    if(count) count.textContent = '0 ' + t('answers');
-    return;
-  }
+  list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('Loading...') + '</div>';
   
-  var uid = getUserId();
-  var html = '';
-  var start = Math.max(0, answers.length - 10);
-  for(var i = answers.length - 1; i >= start; i--){
-    var a = answers[i];
-    var initial = a.name ? a.name.charAt(0).toUpperCase() : 'A';
-    var timeAgo = getTimeAgo(a.date);
-    var likes = a.likes || [];
-    var liked = likes.indexOf(uid) !== -1;
-    html += '<div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--border);">' +
-      '<div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:900;flex-shrink:0;">' + initial + '</div>' +
-      '<div style="flex:1;">' +
-        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
-          '<span style="font-weight:700;font-size:14px;color:var(--text);">' + (a.name || 'Anonymous') + '</span>' +
-          '<span style="font-size:12px;color:var(--muted);">' + timeAgo + '</span>' +
+  getPublicAnswers(function(answers){
+    if(answers.length === 0){
+      list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('No answers yet. Be the first to answer!') + '</div>';
+      if(count) count.textContent = '0 ' + t('answers');
+      return;
+    }
+    
+    var uid = getUserId();
+    var html = '';
+    var start = Math.max(0, answers.length - 10);
+    for(var i = answers.length - 1; i >= start; i--){
+      var a = answers[i];
+      var initial = a.name ? a.name.charAt(0).toUpperCase() : 'A';
+      var timeAgo = getTimeAgo(a.date);
+      var likes = a.likes || [];
+      var liked = likes.indexOf(uid) !== -1;
+      html += '<div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--border);">' +
+        '<div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:900;flex-shrink:0;">' + initial + '</div>' +
+        '<div style="flex:1;">' +
+          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
+            '<span style="font-weight:700;font-size:14px;color:var(--text);">' + (a.name || 'Anonymous') + '</span>' +
+            '<span style="font-size:12px;color:var(--muted);">' + timeAgo + '</span>' +
+          '</div>' +
+          '<p style="font-size:15px;color:var(--text);line-height:1.6;margin:0 0 8px;">' + escapeHtml(a.text) + '</p>' +
+          '<button onclick="toggleAnswerLike(' + a.id + ')" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;border:1.5px solid ' + (liked ? 'var(--accent)' : 'var(--border)') + ';background:' + (liked ? 'var(--accent-soft)' : 'var(--bg)') + ';color:' + (liked ? 'var(--accent)' : 'var(--muted)') + ';font-size:13px;font-weight:700;cursor:pointer;">' +
+            (liked ? '❤️' : '🤍') + ' ' + likes.length + '</button>' +
         '</div>' +
-        '<p style="font-size:15px;color:var(--text);line-height:1.6;margin:0 0 8px;">' + escapeHtml(a.text) + '</p>' +
-        '<button onclick="toggleAnswerLike(' + i + ')" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;border:1.5px solid ' + (liked ? 'var(--accent)' : 'var(--border)') + ';background:' + (liked ? 'var(--accent-soft)' : 'var(--bg)') + ';color:' + (liked ? 'var(--accent)' : 'var(--muted)') + ';font-size:13px;font-weight:700;cursor:pointer;">' +
-          (liked ? '❤️' : '🤍') + ' ' + likes.length + '</button>' +
-      '</div>' +
-    '</div>';
-  }
-  list.innerHTML = html;
-  if(count) count.textContent = answers.length + ' ' + t('answers');
+      '</div>';
+    }
+    list.innerHTML = html;
+    if(count) count.textContent = answers.length + ' ' + t('answers');
+  });
 }
 
-function toggleAnswerLike(idx){
-  var answers = getPublicAnswers();
-  if(idx < 0 || idx >= answers.length) return;
-  var a = answers[idx];
-  if(!a.likes) a.likes = [];
-  var uid = getUserId();
-  var pos = a.likes.indexOf(uid);
-  if(pos === -1){ a.likes.push(uid); }
-  else { a.likes.splice(pos, 1); }
-  savePublicAnswers(answers);
-  loadHeroAnswers();
+function toggleAnswerLike(id){
+  getPublicAnswers(function(answers){
+    for(var i = 0; i < answers.length; i++){
+      if(answers[i].id === id){
+        var a = answers[i];
+        if(!a.likes) a.likes = [];
+        var uid = getUserId();
+        var pos = a.likes.indexOf(uid);
+        if(pos === -1){ a.likes.push(uid); }
+        else { a.likes.splice(pos, 1); }
+        updateAnswerLikes(id, a.likes, loadHeroAnswers);
+        return;
+      }
+    }
+  });
 }
 
 function getUserId(){
@@ -1309,6 +1345,10 @@ function isFree(user){
 var selectedPlan = 'monthly';
 
 var STRIPE_PAYMENT_LINK = ''; // اكتب هنا رابط Stripe Payment Link الخاص بك، مثل: https://buy.stripe.com/xxxxxx
+
+// ===== Supabase (shared public answers) =====
+var SUPABASE_URL = 'https://ggzekpfvvnetewkiddxm.supabase.co';
+var SUPABASE_ANON_KEY = 'sb_publishable_LaYd0-eN2ecC6rRjcx73Xw_g1nI76mv';
 
 function selectPlan(plan){
   selectedPlan = plan;
@@ -1612,7 +1652,7 @@ function renderLegal(c){
 // ==========================================
 function renderDashboard(c){
   var user = getUserData();
-  var answers = getPublicAnswers();
+  var publishedCount = (user.reflections || []).length;
   var daysSinceJoin = Math.floor((Date.now() - new Date(user.joinDateISO || user.joinDate || Date.now()).getTime()) / 86400000);
   var streak = computeStreak(user);
   var badges = [
@@ -1623,7 +1663,7 @@ function renderDashboard(c){
     {name:"100 Entries", icon:"M9 12l2 2 4-4M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", check: user.entries >= 100},
     {name:"Year Long", icon:"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", check: daysSinceJoin >= 365},
     {name:"Wordsmith", icon:"M4 6h16M4 12h16M4 18h7", check: user.words >= 5000},
-    {name:"Community Star", icon:"M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8z", check: answers.length >= 5}
+    {name:"Community Star", icon:"M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8z", check: publishedCount >= 5}
   ];
   
   var unlockedCount = 0;
@@ -1761,58 +1801,57 @@ function saveDashReflection(){
   saveUserData(user);
 
   // Publish the answer publicly
-  var answers = getPublicAnswers();
-  answers.push({
-    id: 'a' + Date.now(),
+  addPublicAnswer({
     name: user.name || 'Anonymous',
     text: ta.value.trim(),
     date: new Date().toISOString(),
     likes: []
-  });
-  savePublicAnswers(answers);
+  }, loadDashAnswers);
 
   showToast(t('Your answer has been published!') + ' 💜','success');
   ta.value = '';
-  loadDashAnswers();
 }
 
 function loadDashAnswers(){
-  var answers = getPublicAnswers();
   var list = document.getElementById('dash-answers-list');
   var count = document.getElementById('dash-answers-count');
   
   if(!list) return;
   
-  if(answers.length === 0){
-    list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('No answers yet. Be the first to answer!') + '</div>';
-    if(count) count.textContent = '0 ' + t('answers');
-    return;
-  }
+  list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('Loading...') + '</div>';
   
-  var uid = getUserId();
-  var html = '';
-  var start = Math.max(0, answers.length - 10);
-  for(var i = answers.length - 1; i >= start; i--){
-    var a = answers[i];
-    var initial = a.name ? a.name.charAt(0).toUpperCase() : 'A';
-    var timeAgo = getTimeAgo(a.date);
-    var likes = a.likes || [];
-    var liked = likes.indexOf(uid) !== -1;
-    html += '<div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--border);">' +
-      '<div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:900;flex-shrink:0;">' + initial + '</div>' +
-      '<div style="flex:1;">' +
-        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
-          '<span style="font-weight:700;font-size:14px;">' + (a.name || 'Anonymous') + '</span>' +
-          '<span style="font-size:12px;color:var(--muted);">' + timeAgo + '</span>' +
+  getPublicAnswers(function(answers){
+    if(answers.length === 0){
+      list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('No answers yet. Be the first to answer!') + '</div>';
+      if(count) count.textContent = '0 ' + t('answers');
+      return;
+    }
+    
+    var uid = getUserId();
+    var html = '';
+    var start = Math.max(0, answers.length - 10);
+    for(var i = answers.length - 1; i >= start; i--){
+      var a = answers[i];
+      var initial = a.name ? a.name.charAt(0).toUpperCase() : 'A';
+      var timeAgo = getTimeAgo(a.date);
+      var likes = a.likes || [];
+      var liked = likes.indexOf(uid) !== -1;
+      html += '<div style="display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--border);">' +
+        '<div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:900;flex-shrink:0;">' + initial + '</div>' +
+        '<div style="flex:1;">' +
+          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
+            '<span style="font-weight:700;font-size:14px;">' + (a.name || 'Anonymous') + '</span>' +
+            '<span style="font-size:12px;color:var(--muted);">' + timeAgo + '</span>' +
+          '</div>' +
+          '<p style="font-size:15px;line-height:1.6;margin:0 0 8px;">' + escapeHtml(a.text) + '</p>' +
+          '<button onclick="toggleAnswerLike(' + a.id + ')" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;border:1.5px solid ' + (liked ? 'var(--accent)' : 'var(--border)') + ';background:' + (liked ? 'var(--accent-soft)' : 'var(--bg)') + ';color:' + (liked ? 'var(--accent)' : 'var(--muted)') + ';font-size:13px;font-weight:700;cursor:pointer;">' +
+            (liked ? '❤️' : '🤍') + ' ' + likes.length + '</button>' +
         '</div>' +
-        '<p style="font-size:15px;line-height:1.6;margin:0 0 8px;">' + escapeHtml(a.text) + '</p>' +
-        '<button onclick="toggleAnswerLike(' + i + ')" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;border:1.5px solid ' + (liked ? 'var(--accent)' : 'var(--border)') + ';background:' + (liked ? 'var(--accent-soft)' : 'var(--bg)') + ';color:' + (liked ? 'var(--accent)' : 'var(--muted)') + ';font-size:13px;font-weight:700;cursor:pointer;">' +
-          (liked ? '❤️' : '🤍') + ' ' + likes.length + '</button>' +
-      '</div>' +
-    '</div>';
-  }
-  list.innerHTML = html;
-  if(count) count.textContent = answers.length + ' ' + t('answers');
+      '</div>';
+    }
+    list.innerHTML = html;
+    if(count) count.textContent = answers.length + ' ' + t('answers');
+  });
 }
 
 // ==========================================
