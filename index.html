@@ -2,9 +2,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Her Daily Reflection — Reflect · Grow · Thrive</title>
+<title>HerScribe — Reflect · Grow · Thrive</title>
 <meta name="description" content="A daily reflection journal for women. A safe space to write freely, discover insights, meditate, and connect anonymously.">
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 </head>
 <body style="margin:0;padding:0;">
@@ -30,6 +30,8 @@
     .nav-link:hover{color:var(--accent)}
     .nav-link.active{color:var(--accent)}
     .gradient-text{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .brand-logo{font-family:"Playfair Display",serif;font-weight:900;font-style:italic;letter-spacing:-0.5px;background:linear-gradient(100deg,#7c3aed,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+    .brand-sub{font-family:"Figtree",sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:10px;color:var(--muted)}
     .floating{animation:floating 3s ease-in-out infinite}
     @keyframes floating{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
     .pulse-ring{animation:pulse-ring 2s infinite}
@@ -80,7 +82,7 @@
               <div style="width:44px;height:44px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
               </div>
-              <div><div style="font-size:20px;font-weight:900;">Her Daily Reflection</div><div style="font-size:11px;font-weight:600;color:var(--muted);">Reflect · Grow · Thrive</div></div>
+              <div><div class="brand-logo" style="font-size:22px;">HerScribe</div><div class="brand-sub">Reflect · Grow · Thrive</div></div>
             </div>
             <div class="nav-desktop" style="display:flex;align-items:center;gap:24px;">
               <a href="#" class="nav-link active" onclick="event.preventDefault();showPage('home')" style="color:var(--text);font-size:15px;">Home</a>
@@ -314,7 +316,7 @@
                 <div style="width:40px;height:40px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                 </div>
-                <span style="font-size:18px;font-weight:900;">Her Daily Reflection</span>
+                <span class="brand-logo" style="font-size:20px;">HerScribe</span>
               </div>
               <p style="color:#a5b4fc;line-height:1.7;font-size:14px;">A safe space for women to reflect, grow, and thrive through daily thoughtful questions.</p>
             </div>
@@ -343,7 +345,7 @@
               </ul>
             </div>
           </div>
-          <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:30px;text-align:center;color:#818cf8;font-size:13px;">© 2026 Her Daily Reflection. Made with care for women everywhere.</div>
+          <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:30px;text-align:center;color:#818cf8;font-size:13px;">© 2026 HerScribe. Made with care for women everywhere.</div>
         </div>
       </footer>
     </div>
@@ -362,7 +364,7 @@
             <div style="width:38px;height:38px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             </div>
-            <span style="font-weight:900;font-size:16px;">Her Reflection</span>
+            <span class="brand-logo" style="font-size:17px;">HerScribe</span>
           </div>
           <nav style="display:flex;flex-direction:column;gap:4px;">
             <a href="#" class="sidebar-link s-nav" data-page="home" onclick="event.preventDefault();showPage('home')" style="display:flex;align-items:center;gap:12px;padding:12px 14px;color:var(--muted);font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;">
@@ -443,7 +445,7 @@ var currentLang = localStorage.getItem('hdr_lang') || 'en';
 var translations = {
   en: {
     'limit_reached':'You have reached your free limit for today.',
-    'welcome_signup':'Account created! Welcome to Her Daily Reflection 🎉',
+    'welcome_signup':'Account created! Welcome to HerScribe 🎉',
     'pay_with_stripe':'Pay Securely with Stripe',
     'stripe_link_missing':'The payment link is not set up yet. Please try again soon.',
     'welcome_premium':'Welcome to Premium! Enjoy all the benefits. 👑',
@@ -479,14 +481,14 @@ var translations = {
     'Cookies & Analytics':'Cookies & Analytics','privacy_5':'We use privacy-respecting analytics to understand how the app is used and improve it. We do not use invasive tracking or sell your browsing data.',
     'Your Rights':'Your Rights','privacy_6':'You can export or delete your data at any time. Premium members can download their full journal as a text file from the Profile page. Contact us anytime to request deletion of your account data.',
     'Contact About Privacy':'Contact About Privacy','privacy_7':'For any privacy questions or requests, email us at abdalahana555@gmail.com and we will respond within 48 hours.',
-    'Acceptance of Terms':'Acceptance of Terms','terms_1':'By accessing or using Her Daily Reflection, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree, please do not use the app.',
+    'Acceptance of Terms':'Acceptance of Terms','terms_1':'By accessing or using HerScribe, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree, please do not use the app.',
     'Your Account':'Your Account','terms_2':'You are responsible for keeping your account details safe. Since data is stored in your browser, clearing browser data or logging in on another device will not carry your journal over. Create your account carefully.',
     'Free Plan':'Free Plan','terms_3':'The free plan includes: 7 journal reflections, 2 meditations, 1 future letter, and 3 community posts per local profile. Limits apply to your current browser profile.',
     'Premium Subscription':'Premium Subscription','terms_4':'Premium unlocks unlimited journaling, full personal insights, the complete meditation library, unlimited future letters and community posts, monthly summaries, and journal export. Subscription billing is handled securely by Stripe.',
     'Payments & Refunds':'Payments & Refunds','terms_5':'Premium subscriptions renew automatically until you cancel. Payments are processed by Stripe; we never see or store your card details. Refunds follow Stripe\'s refund policy. You can cancel anytime from your Stripe account or by contacting support.',
     'Acceptable Use':'Acceptable Use','terms_6':'Do not post harmful, hateful, defamatory, or illegal content in the community or public answers. Be respectful to other members. We may remove content that violates these rules.',
-    'Intellectual Property':'Intellectual Property','terms_7':'The Her Daily Reflection app, its branding, content, and design belong to Her Daily Reflection. You retain ownership of the reflections you write.',
-    'Limitation of Liability':'Limitation of Liability','terms_8':'The app is provided "as is" without warranties of any kind. Her Daily Reflection is not liable for any damages arising from the use or inability to use the app, including loss of locally stored data.',
+    'Intellectual Property':'Intellectual Property','terms_7':'The HerScribe app, its branding, content, and design belong to HerScribe. You retain ownership of the reflections you write.',
+    'Limitation of Liability':'Limitation of Liability','terms_8':'The app is provided "as is" without warranties of any kind. HerScribe is not liable for any damages arising from the use or inability to use the app, including loss of locally stored data.',
     'Changes to Terms':'Changes to Terms','terms_9':'We may update these Terms from time to time. Continued use of the app after changes are posted constitutes acceptance of the updated Terms.',
     'Get in touch':'Get in touch','contact_intro':'Have a question, feedback, or need help? We\'d love to hear from you. Reach out anytime.',
     'Email us':'Email us','Response time':'Response time','response_time_text':'Within 48 hours','Subscription support':'Subscription support',
@@ -502,7 +504,7 @@ var translations = {
     'Log Out':'Log Out','You have been logged out':'You have been logged out','Loading...':'Loading...'
   },
   ar: {
-    'Her Daily Reflection':'تأملها اليومي','Reflect · Grow · Thrive':'تأمّل · تطوّر · ازدهر',
+    'HerScribe':'HerScribe','Reflect · Grow · Thrive':'تأمّل · تطوّر · ازدهر',
     'Home':'الرئيسية','Features':'المميزات','Pricing':'الأسعار','Dashboard':'لوحة التحكم',
     'Log In':'تسجيل الدخول','Get Started':'ابدأ الآن',
     "TODAY'S REFLECTION IS WAITING":'تأملك اليوم بانتظارك',
@@ -538,8 +540,8 @@ var translations = {
     'A safe space for women to reflect, grow, and thrive through daily thoughtful questions.':'مساحة آمنة للنساء للتأمل والنمو والازدهار من خلال أسئلة يومية عميقة.',
     'Explore':'استكشف','Insights':'الرؤى','Meditations':'التأملات','Forum':'المنتدى','Future Letter':'رسالة المستقبل',
     'Profile':'الملف الشخصي','Legal':'قانوني','Privacy':'الخصوصية','Terms':'الشروط','Contact':'اتصل بنا',
-    '© 2026 Her Daily Reflection. Made with care for women everywhere.':'© 2026 تأملها اليومي. صُنع بعناية للنساء في كل مكان.',
-    'Her Reflection':'تأملها','Back to Home':'العودة للرئيسية','Back':'رجوع',
+    '© 2026 HerScribe. Made with care for women everywhere.':'© 2026 HerScribe. صُنع بعناية للنساء في كل مكان.',
+    'HerScribe':'HerScribe','Back to Home':'العودة للرئيسية','Back':'رجوع',
     'Welcome back':'أهلًا بعودتك','streak_msg':'سلسلتك {n} يومًا متتاليًا! استمري!','days in a row':'يومًا متتاليًا','Start your first reflection today!':'ابدئي أول تأمل لك اليوم!',
     'Current Streak':'السلسلة الحالية','Total Entries':'إجمالي المدخلات','Write your first entry':'اكتبي أول مدخلة','Keep writing!':'استمري في الكتابة!',
     'Words Written':'الكلمات المكتوبة','avg_words':'في المتوسط {n} كلمة/مدخلة','No entries yet':'لا توجد مدخلات بعد','Badges Earned':'الشارات المكتسبة','more to unlock':'متبقي لفتحها',
@@ -575,7 +577,7 @@ var translations = {
     'Account created! Check your email for verification code.':'تم إنشاء الحساب! تحققي من بريدك الإلكتروني لكود التأكيد.','welcome_signup':'تم إنشاء حسابك بنجاح! أهلًا بك','Please fill in all fields':'يرجى ملء جميع الحقول',
     'No account found. Please sign up first.':'لا يوجد حساب. يرجى التسجيل أولًا.','Incorrect email or password':'البريد الإلكتروني أو كلمة المرور غير صحيحة',
     'Please verify your email first':'يرجى تأكيد بريدك الإلكتروني أولًا','Logged in! Redirecting to dashboard...':'تم تسجيل الدخول! جارٍ الانتقال للوحة التحكم...',
-    'Email verified! Welcome to Her Daily Reflection':'تم تأكيد البريد! أهلاً بك في تأملها اليومي','Invalid code. Please try again.':'كود غير صحيح. حاولي مجددًا.',
+    'Email verified! Welcome to HerScribe':'تم تأكيد البريد! أهلاً بك في HerScribe','Invalid code. Please try again.':'كود غير صحيح. حاولي مجددًا.',
     'Please enter the full 6-digit code':'يرجى إدخال الكود المكون من 6 أرقام كاملًا','New code sent to':'تم إرسال كود جديد إلى',
     'Your reflection has been saved privately':'تم حفظ تأملك بشكل خاص','Reflection saved! Your streak continues':'تم حفظ التأمل! سلسلتك مستمرة',
     'Write something first!':'اكتبي شيئًا أولًا!','Now playing:':'يتم التشغيل الآن:','Profile saved successfully!':'تم حفظ الملف الشخصي بنجاح!',
@@ -602,14 +604,14 @@ var translations = {
     'Cookies & Analytics':'ملفات تعريف الارتباط والتحليلات','privacy_5':'نستخدم أدوات تحليلات تحترم الخصوصية لفهم كيفية استخدام التطبيق وتحسينه. لا نستخدم تتبعًا تدخليًا ولا نبيع بيانات تصفحك.',
     'Your Rights':'حقوقك','privacy_6':'يمكنك تصدير بياناتك أو حذفها في أي وقت. يمكن لعضوات بريميوم تنزيل مذكراتهن الكاملة كملف نصي من صفحة الملف الشخصي. تواصلي معنا في أي وقت لطلب حذف بيانات حسابك.',
     'Contact About Privacy':'التواصل بشأن الخصوصية','privacy_7':'لأي أسئلة أو طلبات تتعلق بالخصوصية، راسلينا على abdalahana555@gmail.com وسنرد خلال 48 ساعة.',
-    'Acceptance of Terms':'قبول الشروط','terms_1':'باستخدامك لتطبيق تأملها اليومي، فإنك توافقين على الالتزام بهذه الشروط وسياسة الخصوصية. إذا لم توافقي، يرجى عدم استخدام التطبيق.',
+    'Acceptance of Terms':'قبول الشروط','terms_1':'باستخدامك لتطبيق HerScribe، فإنك توافقين على الالتزام بهذه الشروط وسياسة الخصوصية. إذا لم توافقي، يرجى عدم استخدام التطبيق.',
     'Your Account':'حسابك','terms_2':'أنتِ مسؤولة عن الحفاظ على أمان تفاصيل حسابك. نظرًا لأن البيانات مخزنة في متصفحك، فإن مسح بيانات المتصفح أو الدخول من جهاز آخر لن ينقل مذكراتك معك. أنشئي حسابك بعناية.',
     'Free Plan':'الخطة المجانية','terms_3':'تشمل الخطة المجانية: 7 تأملات، تأملين صوتيين، رسالة واحدة للمستقبل، و3 منشورات في المجتمع لكل ملف محلي. تنطبق الحدود على ملف متصفحك الحالي.',
     'Premium Subscription':'الاشتراك المميز','terms_4':'يفتح بريميوم: تأملات غير محدودة، رؤى شخصية كاملة، مكتبة تأملات كاملة، رسائل ومنشورات غير محدودة، ملخصات شهرية، وتصدير المذكرات. تُدار فواتير الاشتراك بأمان عبر Stripe.',
     'Payments & Refunds':'المدفوعات والمبالغ المستردة','terms_5':'تتجدد اشتراكات بريميوم تلقائيًا حتى تقومي بالإلغاء. تُعالج المدفوعات عبر Stripe؛ نحن لا نرى بيانات بطاقتك ولا نخزنها أبدًا. تتبع المبالغ المستردة سياسة استرداد Stripe. يمكنك الإلغاء في أي وقت.',
     'Acceptable Use':'الاستخدام المقبول','terms_6':'لا تنشري محتوى مؤذيًا أو يحض على الكراهية أو تشهيريًا أو غير قانوني في المجتمع أو الإجابات العامة. كوني محترمة مع العضوات الأخريات. قد نحذف المحتوى المخالف لهذه القواعد.',
-    'Intellectual Property':'الملكية الفكرية','terms_7':'تطبيق تأملها اليومي وعلامته التجارية ومحتواه وتصميمه مملوكة لتأملها اليومي. تحتفظين بملكية التأملات التي تكتبينها.',
-    'Limitation of Liability':'حدود المسؤولية','terms_8':'يُقدَّم التطبيق كما هو دون أي ضمانات. تأملها اليومي غير مسؤولة عن أي أضرار ناتجة عن استخدام التطبيق أو عدم القدرة على استخدامه، بما في ذلك فقدان البيانات المخزنة محليًا.',
+    'Intellectual Property':'الملكية الفكرية','terms_7':'تطبيق HerScribe وعلامته التجارية ومحتواه وتصميمه مملوكة لHerScribe. تحتفظين بملكية التأملات التي تكتبينها.',
+    'Limitation of Liability':'حدود المسؤولية','terms_8':'يُقدَّم التطبيق كما هو دون أي ضمانات. HerScribe غير مسؤولة عن أي أضرار ناتجة عن استخدام التطبيق أو عدم القدرة على استخدامه، بما في ذلك فقدان البيانات المخزنة محليًا.',
     'Changes to Terms':'التغييرات على الشروط','terms_9':'قد نقوم بتحديث هذه الشروط من وقت لآخر. استمرار استخدام التطبيق بعد نشر التغييرات يُعد قبولًا للشروط المحدثة.',
     'Get in touch':'تواصلي معنا','contact_intro':'لديكِ سؤال أو ملاحظة أو تحتاجين مساعدة؟ يسعدنا سماعك. تواصلي معنا في أي وقت.',
     'Email us':'راسلينا بالبريد','Response time':'وقت الرد','response_time_text':'خلال 48 ساعة','Subscription support':'دعم الاشتراك',
@@ -617,7 +619,7 @@ var translations = {
     'English':'English','العربية':'العربية','Français':'Français'
   },
   fr: {
-    'Her Daily Reflection':'Sa Réflexion Quotidienne','Reflect · Grow · Thrive':'Réfléchis · Grandis · Prospère',
+    'HerScribe':'HerScribe','Reflect · Grow · Thrive':'Réfléchis · Grandis · Prospère',
     'Home':'Accueil','Features':'Fonctionnalités','Pricing':'Tarifs','Dashboard':'Tableau de bord',
     'Log In':'Connexion','Get Started':'Commencer',
     "TODAY'S REFLECTION IS WAITING":'VOTRE RÉFLEXION DU JOUR VOUS ATTEND',
@@ -653,8 +655,8 @@ var translations = {
     'A safe space for women to reflect, grow, and thrive through daily thoughtful questions.':'Un espace sûr pour que les femmes réfléchissent, grandissent et prospèrent grâce à des questions quotidiennes profondes.',
     'Explore':'Explorer','Insights':'Perspectives','Meditations':'Méditations','Forum':'Forum','Future Letter':'Lettre du futur',
     'Profile':'Profil','Legal':'Légal','Privacy':'Confidentialité','Terms':'Conditions','Contact':'Contact',
-    '© 2026 Her Daily Reflection. Made with care for women everywhere.':'© 2026 Sa Réflexion Quotidienne. Créé avec soin pour les femmes du monde entier.',
-    'Her Reflection':'Sa Réflexion','Back to Home':'Retour à l\'accueil','Back':'Retour',
+    '© 2026 HerScribe. Made with care for women everywhere.':'© 2026 HerScribe. Créé avec soin pour les femmes du monde entier.',
+    'HerScribe':'HerScribe','Back to Home':'Retour à l\'accueil','Back':'Retour',
     'Welcome back':'Bon retour','streak_msg':'Vous êtes sur une série de {n} jours. Continuez !','days in a row':'jours d\'affilée','Start your first reflection today!':'Commencez votre première réflexion aujourd\'hui !',
     'Current Streak':'Série actuelle','Total Entries':'Entrées totales','Write your first entry':'Écrivez votre première entrée','Keep writing!':'Continuez d\'écrire !',
     'Words Written':'Mots écrits','avg_words':'en moyenne {n} mots/entrée','No entries yet':'Aucune entrée pour le moment','Badges Earned':'Badges gagnés','more to unlock':'à débloquer',
@@ -690,7 +692,7 @@ var translations = {
     'Account created! Check your email for verification code.':'Compte créé ! Consultez votre e-mail pour le code de vérification.','welcome_signup':'Votre compte a été créé avec succès ! Bienvenue','Please fill in all fields':'Veuillez remplir tous les champs',
     'No account found. Please sign up first.':'Aucun compte trouvé. Veuillez vous inscrire d\'abord.','Incorrect email or password':'E-mail ou mot de passe incorrect',
     'Please verify your email first':'Veuillez d\'abord vérifier votre e-mail','Logged in! Redirecting to dashboard...':'Connecté ! Redirection vers le tableau de bord...',
-    'Email verified! Welcome to Her Daily Reflection':'E-mail vérifié ! Bienvenue sur Sa Réflexion Quotidienne','Invalid code. Please try again.':'Code invalide. Veuillez réessayer.',
+    'Email verified! Welcome to HerScribe':'E-mail vérifié ! Bienvenue sur HerScribe','Invalid code. Please try again.':'Code invalide. Veuillez réessayer.',
     'Please enter the full 6-digit code':'Veuillez saisir le code complet à 6 chiffres','New code sent to':'Nouveau code envoyé à',
     'Your reflection has been saved privately':'Votre réflexion a été enregistrée en privé','Reflection saved! Your streak continues':'Réflexion enregistrée ! Votre série continue',
     'Write something first!':'Écrivez quelque chose d\'abord !','Now playing:':'En lecture :','Profile saved successfully!':'Profil enregistré avec succès !',
@@ -717,14 +719,14 @@ var translations = {
     'Cookies & Analytics':'Cookies et analyse','privacy_5':'Nous utilisons des outils d\'analyse respectueux de la vie privée pour comprendre comment l\'application est utilisée et l\'améliorer. Nous n\'utilisons pas de suivi intrusif et ne vendons pas vos données de navigation.',
     'Your Rights':'Vos droits','privacy_6':'Vous pouvez exporter ou supprimer vos données à tout moment. Les membres Premium peuvent télécharger leur journal complet sous forme de fichier texte depuis la page Profil. Contactez-nous à tout moment pour demander la suppression de vos données.',
     'Contact About Privacy':'Contacter pour la confidentialité','privacy_7':'Pour toute question ou demande relative à la confidentialité, écrivez-nous à abdalahana555@gmail.com et nous répondrons sous 48 heures.',
-    'Acceptance of Terms':'Acceptation des conditions','terms_1':'En accédant ou en utilisant Sa Réflexion Quotidienne, vous acceptez d\'être liée par ces Conditions d\'utilisation et notre Politique de confidentialité. Si vous n\'êtes pas d\'accord, veuillez ne pas utiliser l\'application.',
+    'Acceptance of Terms':'Acceptation des conditions','terms_1':'En accédant ou en utilisant HerScribe, vous acceptez d\'être liée par ces Conditions d\'utilisation et notre Politique de confidentialité. Si vous n\'êtes pas d\'accord, veuillez ne pas utiliser l\'application.',
     'Your Account':'Votre compte','terms_2':'Vous êtes responsable de la sécurité des détails de votre compte. Comme les données sont stockées dans votre navigateur, effacer les données du navigateur ou vous connecter sur un autre appareil ne transférera pas votre journal. Créez votre compte avec soin.',
     'Free Plan':'Formule gratuite','terms_3':'La formule gratuite comprend : 7 réflexions de journal, 2 méditations, 1 lettre du futur et 3 publications communautaires par profil local. Les limites s\'appliquent à votre profil de navigateur actuel.',
     'Premium Subscription':'Abonnement Premium','terms_4':'Premium débloque : journalisation illimitée, perspectives personnelles complètes, bibliothèque de méditations complète, lettres du futur et publications illimitées, résumés mensuels et export du journal. La facturation de l\'abonnement est gérée en toute sécurité par Stripe.',
     'Payments & Refunds':'Paiements et remboursements','terms_5':'Les abonnements Premium se renouvellent automatiquement jusqu\'à votre annulation. Les paiements sont traités par Stripe ; nous ne voyons ni ne stockons jamais vos données de carte. Les remboursements suivent la politique de remboursement de Stripe. Vous pouvez annuler à tout moment.',
     'Acceptable Use':'Utilisation acceptable','terms_6':'Ne publiez pas de contenu nuisible, haineux, diffamatoire ou illégal dans la communauté ou les réponses publiques. Soyez respectueuse envers les autres membres. Nous pouvons supprimer tout contenu violant ces règles.',
-    'Intellectual Property':'Propriété intellectuelle','terms_7':'L\'application Sa Réflexion Quotidienne, sa marque, son contenu et son design appartiennent à Sa Réflexion Quotidienne. Vous conservez la propriété des réflexions que vous écrivez.',
-    'Limitation of Liability':'Limitation de responsabilité','terms_8':'L\'application est fournie « telle quelle » sans garantie d\'aucune sorte. Sa Réflexion Quotidienne n\'est pas responsable des dommages résultant de l\'utilisation ou de l\'impossibilité d\'utiliser l\'application, y compris la perte de données stockées localement.',
+    'Intellectual Property':'Propriété intellectuelle','terms_7':'L\'application HerScribe, sa marque, son contenu et son design appartiennent à HerScribe. Vous conservez la propriété des réflexions que vous écrivez.',
+    'Limitation of Liability':'Limitation de responsabilité','terms_8':'L\'application est fournie « telle quelle » sans garantie d\'aucune sorte. HerScribe n\'est pas responsable des dommages résultant de l\'utilisation ou de l\'impossibilité d\'utiliser l\'application, y compris la perte de données stockées localement.',
     'Changes to Terms':'Modifications des conditions','terms_9':'Nous pouvons mettre à jour ces Conditions de temps à autre. L\'utilisation continue de l\'application après la publication des modifications vaut acceptation des Conditions mises à jour.',
     'Get in touch':'Entrons en contact','contact_intro':'Une question, un retour ou besoin d\'aide ? Nous serions ravies de vous entendre. Contactez-nous à tout moment.',
     'Email us':'Écrivez-nous','Response time':'Délai de réponse','response_time_text':'Sous 48 heures','Subscription support':'Assistance abonnement',
@@ -1142,7 +1144,7 @@ setTimeout(function(){ loadHeroAnswers(); }, 500);
           <div style="width:40px;height:40px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
           </div>
-          <span style="font-size:18px;font-weight:900;">Her Daily Reflection</span>
+          <span class="brand-logo" style="font-size:20px;">HerScribe</span>
         </div>
         <h1 style="font-size:36px;font-weight:900;margin-bottom:10px;">Create your account</h1>
         <p style="color:var(--muted);margin-bottom:32px;">Start your 7-day free trial. No credit card required.</p>
@@ -1193,7 +1195,7 @@ setTimeout(function(){ loadHeroAnswers(); }, 500);
           <div style="width:40px;height:40px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
           </div>
-          <span style="font-size:18px;font-weight:900;">Her Daily Reflection</span>
+          <span class="brand-logo" style="font-size:20px;">HerScribe</span>
         </div>
         <h1 style="font-size:36px;font-weight:900;margin-bottom:10px;">Log in</h1>
         <p style="color:var(--muted);margin-bottom:32px;">Welcome back! Please enter your details.</p>
@@ -1507,7 +1509,7 @@ function checkVerification(){
     user.verified = true;
     user.verificationCode = '';
     saveUserData(user);
-    showToast(t('Email verified! Welcome to Her Daily Reflection') + ' 🎉','success');
+    showToast(t('Email verified! Welcome to HerScribe') + ' 🎉','success');
     setTimeout(function(){ showPage('dashboard'); }, 1200);
   } else {
     showToast(t('Invalid code. Please try again.'),'warning');
