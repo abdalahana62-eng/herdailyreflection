@@ -2,8 +2,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HerScribe — Reflect · Grow · Thrive</title>
-<meta name="description" content="A daily reflection journal for women. A safe space to write freely, discover insights, meditate, and connect anonymously.">
+<title>HerScribe — Daily Journal Prompts for Women | Reflect & Grow in 2 Minutes a Day</title>
+<meta name="description" content="HerScribe gives you a fresh daily journal prompt for women, a private safe space to write, mood tracking, insights, and eBooks to quiet your mind. 2 minutes a day, no pressure.">
+<meta name="keywords" content="daily journal prompts for women, self reflection questions, morning reflection routine, journaling for self love, private journal app, women personal growth">
+<meta property="og:title" content="HerScribe — Daily Journal Prompts for Women | 2 Minutes a Day">
+<meta property="og:description" content="A daily reflection question, private journal, mood tracking and eBooks to help you quiet your mind and grow — with no pressure and no streak guilt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://abdalahana62-eng.github.io/herdailyreflection/">
+<meta property="og:image" content="https://abdalahana62-eng.github.io/herdailyreflection/favicon.svg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://abdalahana62-eng.github.io/herdailyreflection/">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 </head>
@@ -130,6 +138,7 @@
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('pricing')" style="color:var(--text);font-size:15px;">Pricing</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('store')" style="color:var(--text);font-size:15px;">Store</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('blog')" style="color:var(--text);font-size:15px;">Blog</a>
+              <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('questions')" style="color:var(--text);font-size:15px;">Prompts</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();showPage('dashboard')" style="color:var(--text);font-size:15px;">Dashboard</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobile()" aria-label="Menu" style="display:none;border:none;background:transparent;cursor:pointer;padding:8px;">
@@ -163,6 +172,7 @@
               <a href="#" onclick="event.preventDefault();scrollToSection('pricing');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Pricing</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('store');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Store</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('blog');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Blog</a>
+              <a href="#" onclick="event.preventDefault();scrollToSection('questions');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Journal Prompts</a>
               <a href="#" onclick="event.preventDefault();showPage('dashboard');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;display:block;text-decoration:none;">Dashboard</a>
               <div style="padding:12px 0;color:var(--text);font-weight:600;display:flex;gap:16px;" data-no-i18n>
                 <span style="opacity:.7;">Language:</span>
@@ -468,6 +478,67 @@
           </div>
         </section>
 
+        <!-- QUESTIONS ARCHIVE -->
+        <section id="questions" style="background:var(--bg);padding:100px 24px;">
+          <div style="max-width:900px;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:60px;">
+              <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;">Free Journal Prompts</div>
+              <h2 class="section-title" style="font-weight:900;">30 powerful <span class="gradient-text">journal prompts</span> for women</h2>
+              <p style="color:var(--muted);max-width:600px;margin:16px auto 0;font-size:16px;line-height:1.7;">All the daily reflection questions, free to browse. Pick one that speaks to you, copy it, and reflect at your own pace.</p>
+            </div>
+            <div id="questions-archive" style="display:flex;flex-direction:column;gap:12px;"></div>
+            <div style="text-align:center;margin-top:36px;">
+              <button onclick="showPage('signup')" class="btn-primary" style="padding:16px 36px;border-radius:50px;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;border:none;cursor:pointer;font-size:16px;font-weight:800;">Get a fresh question every day →</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" style="background:linear-gradient(180deg,#f5f3ff,var(--bg));padding:100px 24px;">
+          <div style="max-width:1100px;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:60px;">
+              <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;">Loved by Women</div>
+              <h2 class="section-title" style="font-weight:900;">Real women. <span class="gradient-text">Real growth.</span></h2>
+              <p style="color:var(--muted);max-width:600px;margin:16px auto 0;font-size:16px;line-height:1.7;">Thousands of women start their day here. Here's what a few of them say.</p>
+            </div>
+            <div class="test-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+              <div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;padding:32px;display:flex;flex-direction:column;">
+                <div style="font-size:40px;line-height:1;margin-bottom:16px;">💜</div>
+                <p style="font-size:15px;line-height:1.7;color:var(--text);font-style:italic;margin:0 0 20px;">"I started with the 7-day trial and honestly never felt pressured. Two minutes every morning and I actually look forward to it. My mind feels lighter."</p>
+                <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+                  <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;">S</div>
+                  <div>
+                    <div style="font-weight:800;font-size:14px;">Sarah M.</div>
+                    <div style="font-size:12px;color:var(--muted);">Reflecting for 3 months</div>
+                  </div>
+                </div>
+              </div>
+              <div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;padding:32px;display:flex;flex-direction:column;">
+                <div style="font-size:40px;line-height:1;margin-bottom:16px;">🌱</div>
+                <p style="font-size:15px;line-height:1.7;color:var(--text);font-style:italic;margin:0 0 20px;">"The daily questions surprised me — they keep making me think about things I never would have considered. The mood chart showed me patterns I couldn't see."</p>
+                <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+                  <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#0ea5e9,#7dd3fc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;">E</div>
+                  <div>
+                    <div style="font-weight:800;font-size:14px;">Emily R.</div>
+                    <div style="font-size:12px;color:var(--muted);">Reflecting for 6 months</div>
+                  </div>
+                </div>
+              </div>
+              <div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;padding:32px;display:flex;flex-direction:column;">
+                <div style="font-size:40px;line-height:1;margin-bottom:16px;">🌟</div>
+                <p style="font-size:15px;line-height:1.7;color:var(--text);font-style:italic;margin:0 0 20px;">"As a busy mom I have zero time. The fact that there's no guilt when I miss a day is everything. It's the only habit that has actually stuck."</p>
+                <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+                  <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;">J</div>
+                  <div>
+                    <div style="font-weight:800;font-size:14px;">Jessica T.</div>
+                    <div style="font-size:12px;color:var(--muted);">Reflecting for 1 year</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- CTA -->
         <section style="max-width:1000px;margin:0 auto;padding:80px 24px 100px;">
           <div style="background:linear-gradient(135deg,var(--accent),#4c1d95);border-radius:32px;padding:70px 40px;text-align:center;color:#fff;">
@@ -670,7 +741,7 @@ var translations = {
     'letter_locked':'You have reached the free limit for future letters.',
     'export_locked':'Journal export is a Premium feature.','journal_exported':'Journal exported successfully!',
     'post_btn':'Post','posts':'posts','letter_ready':'Your letter is ready to be written','days_left':'days left',
-    'published_note':'✨ Your answer will be published publicly below so everyone can see it','Show Answers':'Show Answers','Hide Answers':'Hide Answers','Share:':'Share:','No pressure':'No pressure','No streak guilt':'No streak guilt','Enable daily reminder':'Enable daily reminder','Daily reminder on':'Daily reminder on','reminder_enabled':'Daily reminder is on. You\'ll get a gentle nudge each day.','reminder_disabled':'Daily reminder is off.','reminder_denied':'Notifications are blocked. Allow them in your browser to enable reminders.','reminder_not_supported':'Your browser doesn\'t support notifications.','reminder_body':'Your 2-minute reflection is waiting. No pressure — just you. 💜','How are you feeling today?':'How are you feeling today?','mood_subtitle':'One tap. That is all. It takes 2 seconds and builds your emotional picture over time.','Your mood this week':'Your mood this week','mood_week_subtitle':'Last 7 days','mood_saved':'Mood saved','mood_none':'No check-in','mood_1':'Rough','mood_2':'Low','mood_3':'Okay','mood_4':'Good','mood_5':'Great',
+    'published_note':'✨ Your answer will be published publicly below so everyone can see it','Show Answers':'Show Answers','Hide Answers':'Hide Answers','Share:':'Share:','prompt_copied':'Prompt copied to clipboard','Journal Prompts':'Journal Prompts','on_this_day_empty':'No memory from this day yet','on_this_day_hint':'Keep writing — next year, you\'ll see how far you\'ve come on this exact day.','more_memories':'more from this day','No pressure':'No pressure','No streak guilt':'No streak guilt','Enable daily reminder':'Enable daily reminder','Daily reminder on':'Daily reminder on','reminder_enabled':'Daily reminder is on. You\'ll get a gentle nudge each day.','reminder_disabled':'Daily reminder is off.','reminder_denied':'Notifications are blocked. Allow them in your browser to enable reminders.','reminder_not_supported':'Your browser doesn\'t support notifications.','reminder_body':'Your 2-minute reflection is waiting. No pressure — just you. 💜','How are you feeling today?':'How are you feeling today?','mood_subtitle':'One tap. That is all. It takes 2 seconds and builds your emotional picture over time.','Your mood this week':'Your mood this week','mood_week_subtitle':'Last 7 days','mood_saved':'Mood saved','mood_none':'No check-in','mood_1':'Rough','mood_2':'Low','mood_3':'Okay','mood_4':'Good','mood_5':'Great',
     'Log Out':'Log Out','You have been logged out':'You have been logged out','Loading...':'Loading...','Digital Store':'Digital Store','Gift yourself the tools to':'Gift yourself the tools to','grow':'grow','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.','Buy Now':'Buy Now','From Overthinking to Inner Peace':'From Overthinking to Inner Peace','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.','Bonus: 2nd eBook free':'Bonus: 2nd eBook free','60-day money-back guarantee':'60-day money-back guarantee','Daily Routines of Successful People':'Daily Routines of Successful People','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.','Mastering Stress Without Medication':'Mastering Stress Without Medication','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.'
   },
   ar: {
@@ -733,7 +804,7 @@ var translations = {
     'Connect anonymously with women on the same journey.':'تواصلي مجهولة الهوية مع نساء في نفس الرحلة.','Share something anonymously...':'شاركي شيئًا بشكل مجهول...','Post Anonymously':'نشر بشكل مجهول',
     'posts':'المنشورات','No posts yet. Be the first to share!':'لا توجد منشورات بعد. كوني أول من يشارك!','Comments':'التعليقات','Write a comment...':'اكتبي تعليقًا...','Post':'نشر','With My Name':'باسمي','post_btn':'نشر',
     'All':'الكل','Self-Discovery':'اكتشاف الذات','Growth':'النمو','Relationships':'العلاقات','Anonymous':'مجهول','replies':'ردود','Just now':'الآن فقط','New':'جديد',
-    'Write something first!':'اكتبي شيئًا أولًا!','Your anonymous post has been shared':'تم نشر منشورك المجهول بنجاح','Answer published!':'تم نشر الإجابة!','Your answer has been published!':'تم نشر إجابتك!','Public Answers':'إجابات عامة','answers':'إجابات','No answers yet. Be the first to answer!':'لا توجد إجابات بعد. كن أول من يجيب!','Publish Answer':'نشر الإجابة','comments':'تعليقات','No comments yet. Be the first to share!':'لا توجد تعليقات بعد. كن أول من يشارك!','Comment posted!':'تم نشر التعليق!','Save Reflection':'حفظ التأمل','published_note':'✨ ستُظهر إجابتك علنًا بالأسفل ليراها الجميع','Show Answers':'عرض الإجابات','Hide Answers':'إخفاء الإجابات','Share:':'مشاركة:','No pressure':'بدون ضغط','No streak guilt':'بدون شعور بالذنب','Enable daily reminder':'تفعيل التذكير اليومي','Daily reminder on':'التذكير اليومي مفعّل','reminder_enabled':'التذكير اليومي مفعّل. ستصلك دفعة لطيفة كل يوم.','reminder_disabled':'التذكير اليومي متوقف.','reminder_denied':'الإشعارات محجوبة. اسمحي بها في المتصفح لتفعيل التذكير.','reminder_not_supported':'متصفحك لا يدعم الإشعارات.','reminder_body':'تأملك اليومي لمدة دقيقتين بانتظارك. بدون ضغط — فقط أنتِ. 💜','How are you feeling today?':'كيف تشعرين اليوم؟','mood_subtitle':'لمسة واحدة. هذا كل شيء. تستغرق ثانيتين وتبني صورتك العاطفية مع الوقت.','Your mood this week':'مزاجك هذا الأسبوع','mood_week_subtitle':'آخر 7 أيام','mood_saved':'تم حفظ المزاج','mood_none':'لم تُسجلي','mood_1':'سيء','mood_2':'متعب','mood_3':'عادي','mood_4':'جيد','mood_5':'رائع',
+    'Write something first!':'اكتبي شيئًا أولًا!','Your anonymous post has been shared':'تم نشر منشورك المجهول بنجاح','Answer published!':'تم نشر الإجابة!','Your answer has been published!':'تم نشر إجابتك!','Public Answers':'إجابات عامة','answers':'إجابات','No answers yet. Be the first to answer!':'لا توجد إجابات بعد. كن أول من يجيب!','Publish Answer':'نشر الإجابة','comments':'تعليقات','No comments yet. Be the first to share!':'لا توجد تعليقات بعد. كن أول من يشارك!','Comment posted!':'تم نشر التعليق!','Save Reflection':'حفظ التأمل','published_note':'✨ ستُظهر إجابتك علنًا بالأسفل ليراها الجميع','Show Answers':'عرض الإجابات','Hide Answers':'إخفاء الإجابات','Share:':'مشاركة:','prompt_copied':'تم نسخ السؤال','Journal Prompts':'أسئلة التأمل','on_this_day_empty':'لا توجد ذكرى من هذا اليوم بعد','on_this_day_hint':'استمري في الكتابة — في العام القادم سترين كم تقدمتِ في هذا اليوم بالضبط.','more_memories':'أخرى من هذا اليوم','No pressure':'بدون ضغط','No streak guilt':'بدون شعور بالذنب','Enable daily reminder':'تفعيل التذكير اليومي','Daily reminder on':'التذكير اليومي مفعّل','reminder_enabled':'التذكير اليومي مفعّل. ستصلك دفعة لطيفة كل يوم.','reminder_disabled':'التذكير اليومي متوقف.','reminder_denied':'الإشعارات محجوبة. اسمحي بها في المتصفح لتفعيل التذكير.','reminder_not_supported':'متصفحك لا يدعم الإشعارات.','reminder_body':'تأملك اليومي لمدة دقيقتين بانتظارك. بدون ضغط — فقط أنتِ. 💜','How are you feeling today?':'كيف تشعرين اليوم؟','mood_subtitle':'لمسة واحدة. هذا كل شيء. تستغرق ثانيتين وتبني صورتك العاطفية مع الوقت.','Your mood this week':'مزاجك هذا الأسبوع','mood_week_subtitle':'آخر 7 أيام','mood_saved':'تم حفظ المزاج','mood_none':'لم تُسجلي','mood_1':'سيء','mood_2':'متعب','mood_3':'عادي','mood_4':'جيد','mood_5':'رائع',
     'Write a letter to your future self. We\'ll deliver it at the perfect moment.':'اكتبي رسالة إلى ذاتك المستقبلية. سنوصلها لك في اللحظة المثالية.',
     'Subject':'الموضوع','To my future self...':'إلى ذاتي المستقبلية...','Your Letter':'رسالتك','Dear future me... Here\'s what I want you to know...':'عزيزتي أنا في المستقبل... إليك ما أريدك أن تعرفيه...',
     'When to deliver?':'متى نرسل الرسالة؟','6 months from now':'بعد 6 أشهر','1 year from now':'بعد عام واحد','3 years from now':'بعد 3 سنوات','5 years from now':'بعد 5 سنوات','On my next birthday':'في عيد ميلادي القادم',
@@ -848,7 +919,7 @@ var translations = {
     'Connect anonymously with women on the same journey.':'Connectez-vous anonymement avec des femmes sur le même chemin.','Share something anonymously...':'Partagez quelque chose anonymement...','Post Anonymously':'Publier anonymement',
     'posts':'Publications','No posts yet. Be the first to share!':'Aucune publication pour le moment. Soyez la première à partager !','Comments':'Commentaires','Write a comment...':'Écrivez un commentaire...','Post':'Publier','With My Name':'Avec mon nom','post_btn':'Publier',
     'All':'Tout','Self-Discovery':'Découverte de soi','Growth':'Croissance','Relationships':'Relations','Anonymous':'Anonyme','replies':'réponses','Just now':'À l\'instant','New':'Nouveau',
-    'Write something first!':'Écrivez quelque chose d\'abord !','Your anonymous post has been shared':'Votre publication anonyme a été partagée','Answer published!':'Réponse publiée !','Your answer has been published!':'Votre réponse a été publiée !','Public Answers':'Réponses publiques','answers':'réponses','No answers yet. Be the first to answer!':'Aucune réponse pour le moment. Soyez le premier à répondre !','Publish Answer':'Publier la réponse','comments':'commentaires','No comments yet. Be the first to share!':'Aucun commentaire pour le moment. Soyez le premier à partager !','Comment posted!':'Commentaire publié !','Save Reflection':'Enregistrer la réflexion','published_note':'✨ Votre réponse sera publiée publiquement ci-dessous pour que tout le monde puisse la voir','Show Answers':'Afficher les réponses','Hide Answers':'Masquer les réponses','Share:':'Partager :','No pressure':'Sans pression','No streak guilt':'Sans culpabilité','Enable daily reminder':'Activer le rappel quotidien','Daily reminder on':'Rappel quotidien activé','reminder_enabled':'Le rappel quotidien est activé. Vous recevrez un petit rappel chaque jour.','reminder_disabled':'Le rappel quotidien est désactivé.','reminder_denied':'Les notifications sont bloquées. Autorisez-les dans votre navigateur pour activer les rappels.','reminder_not_supported':'Votre navigateur ne prend pas en charge les notifications.','reminder_body':'Votre réflexion de 2 minutes vous attend. Sans pression — juste vous. 💜','How are you feeling today?':'Comment vous sentez-vous aujourd\'hui ?','mood_subtitle':'Un seul toucher. C\'est tout. Ça prend 2 secondes et construit votre image émotionnelle au fil du temps.','Your mood this week':'Votre humeur cette semaine','mood_week_subtitle':'7 derniers jours','mood_saved':'Humeur enregistrée','mood_none':'Aucune saisie','mood_1':'Difficile','mood_2':'Bas','mood_3':'OK','mood_4':'Bien','mood_5':'Super',
+    'Write something first!':'Écrivez quelque chose d\'abord !','Your anonymous post has been shared':'Votre publication anonyme a été partagée','Answer published!':'Réponse publiée !','Your answer has been published!':'Votre réponse a été publiée !','Public Answers':'Réponses publiques','answers':'réponses','No answers yet. Be the first to answer!':'Aucune réponse pour le moment. Soyez le premier à répondre !','Publish Answer':'Publier la réponse','comments':'commentaires','No comments yet. Be the first to share!':'Aucun commentaire pour le moment. Soyez le premier à partager !','Comment posted!':'Commentaire publié !','Save Reflection':'Enregistrer la réflexion','published_note':'✨ Votre réponse sera publiée publiquement ci-dessous pour que tout le monde puisse la voir','Show Answers':'Afficher les réponses','Hide Answers':'Masquer les réponses','Share:':'Partager :','prompt_copied':'Invite copiée dans le presse-papiers','Journal Prompts':'Invites de journal','on_this_day_empty':'Aucun souvenir de ce jour pour l\'instant','on_this_day_hint':'Continuez à écrire — l\'année prochaine, vous verrez le chemin parcouru ce jour précis.','more_memories':'de plus de ce jour','No pressure':'Sans pression','No streak guilt':'Sans culpabilité','Enable daily reminder':'Activer le rappel quotidien','Daily reminder on':'Rappel quotidien activé','reminder_enabled':'Le rappel quotidien est activé. Vous recevrez un petit rappel chaque jour.','reminder_disabled':'Le rappel quotidien est désactivé.','reminder_denied':'Les notifications sont bloquées. Autorisez-les dans votre navigateur pour activer les rappels.','reminder_not_supported':'Votre navigateur ne prend pas en charge les notifications.','reminder_body':'Votre réflexion de 2 minutes vous attend. Sans pression — juste vous. 💜','How are you feeling today?':'Comment vous sentez-vous aujourd\'hui ?','mood_subtitle':'Un seul toucher. C\'est tout. Ça prend 2 secondes et construit votre image émotionnelle au fil du temps.','Your mood this week':'Votre humeur cette semaine','mood_week_subtitle':'7 derniers jours','mood_saved':'Humeur enregistrée','mood_none':'Aucune saisie','mood_1':'Difficile','mood_2':'Bas','mood_3':'OK','mood_4':'Bien','mood_5':'Super',
     'Write a letter to your future self. We\'ll deliver it at the perfect moment.':'Écrivez une lettre à votre futur moi. Nous la livrerons au moment parfait.',
     'Subject':'Sujet','To my future self...':'À mon futur moi...','Your Letter':'Votre lettre','Dear future me... Here\'s what I want you to know...':'Cher futur moi... Voici ce que je veux que tu saches...',
     'When to deliver?':'Quand livrer ?','6 months from now':'Dans 6 mois','1 year from now':'Dans 1 an','3 years from now':'Dans 3 ans','5 years from now':'Dans 5 ans','On my next birthday':'À mon prochain anniversaire',
@@ -1183,6 +1254,32 @@ function getWeekMoodData(){
     days.push({label:label, value:val});
   }
   return days;
+}
+
+function onThisDayHtml(user){
+  var now = new Date();
+  var nowMD = (now.getMonth() + 1) + '-' + now.getDate();
+  var refs = user.reflections || [];
+  var memories = [];
+  for(var i = 0; i < refs.length; i++){
+    var r = refs[i];
+    var d = new Date(r.date);
+    var md = (d.getMonth() + 1) + '-' + d.getDate();
+    if(md === nowMD && d.getFullYear() !== now.getFullYear()){
+      memories.push({date: d, text: r.text});
+    }
+  }
+  if(memories.length === 0){
+    return '<p style="font-size:13px;color:var(--muted);font-weight:600;margin:0 0 8px;">' + t('on_this_day_empty') + '</p>' +
+      '<p style="font-size:14px;line-height:1.6;color:var(--muted);">' + t('on_this_day_hint') + '</p>';
+  }
+  memories.sort(function(a,b){ return b.date - a.date; });
+  var m = memories[0];
+  var locale = currentLang === 'ar' ? 'ar-EG' : currentLang === 'fr' ? 'fr-FR' : 'en-US';
+  var when = m.date.toLocaleDateString(locale, {month:'long', day:'numeric', year:'numeric'});
+  return '<p style="font-size:13px;color:var(--accent);font-weight:700;margin:0 0 10px;">' + when + '</p>' +
+    '<p style="font-size:15px;line-height:1.6;font-style:italic;font-weight:500;margin:0;">"' + escapeHtml(m.text) + '"</p>' +
+    (memories.length > 1 ? '<p style="font-size:12px;color:var(--muted);font-weight:600;margin:10px 0 0;">+' + (memories.length - 1) + ' ' + t('more_memories') + '</p>' : '');
 }
 
 function initMoodChart(){
@@ -1604,6 +1701,39 @@ function setDailyQuestions(){
   var dash = document.getElementById('dash-question');
   if(dash) dash.textContent = '"' + text + '"';
   setMorningMessage();
+  renderQuestionArchive();
+}
+
+function renderQuestionArchive(){
+  var el = document.getElementById('questions-archive');
+  if(!el) return;
+  var html = '';
+  for(var i = 0; i < DAILY_QUESTIONS.length; i++){
+    var q = DAILY_QUESTIONS[i].en;
+    html += '<div style="display:flex;align-items:flex-start;gap:14px;background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:18px 20px;transition:all .2s;" onmouseenter="this.style.borderColor=\'var(--accent)\'" onmouseleave="this.style.borderColor=\'var(--border)\'">' +
+      '<div style="width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + (i + 1) + '</div>' +
+      '<p style="flex:1;margin:0;font-size:15px;line-height:1.6;font-weight:600;color:var(--text);">' + q + '</p>' +
+      '<button onclick="copyQuestion(' + i + ')" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1.5px solid var(--border);background:var(--bg);color:var(--accent);font-size:12px;font-weight:800;cursor:pointer;flex-shrink:0;">📋 Copy</button>' +
+    '</div>';
+  }
+  el.innerHTML = html;
+}
+
+function copyQuestion(i){
+  var q = DAILY_QUESTIONS[i].en;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(q).then(function(){
+      showToast(t('prompt_copied'),'success');
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = q;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast(t('prompt_copied'),'success');
+  }
 }
 
 var MORNING_MESSAGES = {
@@ -2160,9 +2290,8 @@ c.innerHTML = `
         </div>
       </div>
       <div style="background:linear-gradient(135deg,var(--accent-soft),var(--accent2-soft));border:1.5px solid var(--border);border-radius:24px;padding:28px;">
-        <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">Memory from 3 months ago</div>
-        <p style="font-size:13px;color:var(--muted);font-weight:600;margin-bottom:10px;">Q: What would you tell your younger self?</p>
-        <p style="font-size:15px;line-height:1.6;font-style:italic;font-weight:500;">"I realized that I am enough, exactly as I am. This feels like a weight lifted off my shoulders."</p>
+        <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">🕰️ On This Day</div>
+        ` + onThisDayHtml(user) + `
       </div>
     </div>
     
