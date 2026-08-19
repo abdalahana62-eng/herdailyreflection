@@ -66,6 +66,7 @@
     @media (max-width:768px){
       .hero-grid{grid-template-columns:1fr !important}
       .features-grid,.how-grid,.test-grid,.pricing-grid,.footer-grid,.blog-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px !important}
+      #symptoms-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px !important}
       .features-grid .feature-card{padding:14px !important;border-radius:14px !important}
       .features-grid .feature-card>div:first-child{width:40px !important;height:40px !important;border-radius:11px !important;margin-bottom:10px !important}
       .features-grid .feature-card>div:first-child svg{width:20px !important;height:20px !important}
@@ -104,6 +105,7 @@
     }
     @media (max-width:400px){
       .features-grid,.how-grid,.test-grid,.pricing-grid{grid-template-columns:repeat(2,1fr) !important;gap:10px !important}
+      #symptoms-grid{grid-template-columns:repeat(2,1fr) !important;gap:10px !important}
       .features-grid .feature-card{padding:12px !important}
       .products-grid>div>div:first-child{width:96px !important;padding:10px !important}
       .products-grid>div>div:first-child>div:last-child{width:66px !important;height:96px !important}
@@ -137,10 +139,10 @@
             <div class="nav-desktop" style="display:flex;align-items:center;gap:24px;">
               <a href="#" class="nav-link active" onclick="event.preventDefault();showPage('home')" style="color:var(--text);font-size:15px;">Home</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('features')" style="color:var(--text);font-size:15px;">Features</a>
-              <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('pricing')" style="color:var(--text);font-size:15px;">Pricing</a>
+              <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('symptoms')" style="color:var(--text);font-size:15px;">Mental Wellbeing</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('store')" style="color:var(--text);font-size:15px;">Store</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('blog')" style="color:var(--text);font-size:15px;">Blog</a>
-              <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('questions')" style="color:var(--text);font-size:15px;">Prompts</a>
+              <a href="#" class="nav-link" onclick="event.preventDefault();scrollToSection('symptoms')" style="color:var(--text);font-size:15px;">Wellbeing</a>
               <a href="#" class="nav-link" onclick="event.preventDefault();showPage('dashboard')" style="color:var(--text);font-size:15px;">Dashboard</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobile()" aria-label="Menu" style="display:none;border:none;background:transparent;cursor:pointer;padding:8px;">
@@ -171,10 +173,10 @@
             <div style="max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;flex-direction:column;gap:4px;">
               <a href="#" onclick="event.preventDefault();showPage('home');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Home</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('features');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Features</a>
-              <a href="#" onclick="event.preventDefault();scrollToSection('pricing');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Pricing</a>
+              <a href="#" onclick="event.preventDefault();scrollToSection('symptoms');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Mental Wellbeing</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('store');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Store</a>
               <a href="#" onclick="event.preventDefault();scrollToSection('blog');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Blog</a>
-              <a href="#" onclick="event.preventDefault();scrollToSection('questions');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Journal Prompts</a>
+              <a href="#" onclick="event.preventDefault();scrollToSection('symptoms');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;border-bottom:1px solid var(--border);display:block;text-decoration:none;">Wellbeing</a>
               <a href="#" onclick="event.preventDefault();showPage('dashboard');toggleMobile()" style="padding:12px 0;color:var(--text);font-weight:600;display:block;text-decoration:none;">Dashboard</a>
               <div style="padding:12px 0;color:var(--text);font-weight:600;display:flex;gap:16px;" data-no-i18n>
                 <span style="opacity:.7;">Language:</span>
@@ -439,59 +441,15 @@
           </div>
         </section>
 
-        <!-- PRICING -->
-        <section id="pricing" style="background:linear-gradient(180deg,#f5f3ff,var(--bg));padding:100px 24px;">
-          <div style="max-width:800px;margin:0 auto;">
+        <!-- PSYCHOLOGY RELIEF ARTICLES -->
+        <section id="symptoms" style="background:var(--bg);padding:100px 24px;">
+          <div style="max-width:1100px;margin:0 auto;">
             <div style="text-align:center;margin-bottom:60px;">
-              <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;">Simple Pricing</div>
-              <h2 class="section-title" style="font-weight:900;">Start free. Upgrade when <span class="gradient-text">you're ready</span></h2>
+              <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;">Mental Wellbeing</div>
+              <h2 class="section-title" style="font-weight:900;">Can't stop the noise? <span class="gradient-text">You're not alone.</span></h2>
+              <p style="color:var(--muted);max-width:600px;margin:16px auto 0;font-size:16px;line-height:1.7;">Real struggles, written about honestly. Pick what you're going through and read a calm, practical guide to moving through it.</p>
             </div>
-            <div class="pricing-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-              <div style="background:var(--card);border:2px solid var(--border);border-radius:28px;padding:40px;">
-                <div style="font-size:13px;font-weight:800;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">Starter</div>
-                <div style="font-size:52px;font-weight:900;margin-bottom:4px;">Free</div>
-                <button onclick="showPage('signup')" class="btn-secondary w-full" style="padding:14px;border-radius:12px;background:var(--bg);border:2px solid var(--border);cursor:pointer;margin:20px 0;">Get Started Free</button>
-                <div style="display:flex;flex-direction:column;gap:14px;">
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Daily reflection question</span></div>
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">7 journal entries</span></div>
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">2 guided meditations</span></div>
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Community & future letters</span></div>
-                  <div style="display:flex;gap:12px;opacity:.4;"><span style="color:var(--muted);font-weight:900;">✗</span><span style="color:var(--muted);font-weight:500;">Personal insights & analytics</span></div>
-                  <div style="display:flex;gap:12px;opacity:.4;"><span style="color:var(--muted);font-weight:900;">✗</span><span style="color:var(--muted);font-weight:500;">Full meditation library</span></div>
-                </div>
-              </div>
-              <div style="background:var(--card);border:2px solid var(--accent);border-radius:28px;padding:40px;position:relative;box-shadow:0 20px 60px rgba(139,92,246,.15);">
-                <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;padding:6px 18px;border-radius:50px;font-size:12px;font-weight:900;">MOST POPULAR</div>
-                <div style="font-size:13px;font-weight:800;color:var(--accent);text-transform:uppercase;margin-bottom:8px;">Premium</div>
-                <div style="font-size:52px;font-weight:900;margin-bottom:4px;">$6.99<span style="font-size:18px;color:var(--muted);font-weight:600;">/mo</span></div>
-                <div style="font-size:14px;font-weight:700;color:var(--success);margin-bottom:12px;">or <span style="text-decoration:line-through;color:var(--muted);">$83.88</span> $69.99/year <span style="background:var(--success);color:#fff;padding:2px 8px;border-radius:20px;font-size:11px;">SAVE 17%</span></div>
-                <button onclick="showPage('signup')" class="btn-primary w-full" style="padding:14px;border-radius:12px;background:var(--accent);border:none;color:#fff;cursor:pointer;margin:16px 0;">Start 7-Day Free Trial</button>
-                <div style="text-align:center;font-size:12px;color:var(--muted);font-weight:600;margin-bottom:14px;">✓ No credit card required for the trial</div>
-                <div style="display:flex;flex-direction:column;gap:14px;">
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Unlimited private journal</span></div>
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Personal insights & analytics</span></div>
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Full meditation library</span></div>
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Unlimited community + 👑 badge</span></div>
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Unlimited future letters</span></div>
-                  <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:900;">✓</span><span style="font-weight:500;">Monthly summary + journal export</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- QUESTIONS ARCHIVE -->
-        <section id="questions" style="background:var(--bg);padding:100px 24px;">
-          <div style="max-width:900px;margin:0 auto;">
-            <div style="text-align:center;margin-bottom:60px;">
-              <div style="font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;">Free Journal Prompts</div>
-              <h2 class="section-title" style="font-weight:900;">30 powerful <span class="gradient-text">journal prompts</span> for women</h2>
-              <p style="color:var(--muted);max-width:600px;margin:16px auto 0;font-size:16px;line-height:1.7;">All the daily reflection questions, free to browse. Pick one that speaks to you, copy it, and reflect at your own pace.</p>
-            </div>
-            <div id="questions-archive" style="display:flex;flex-direction:column;gap:12px;"></div>
-            <div style="text-align:center;margin-top:36px;">
-              <button onclick="showPage('signup')" class="btn-primary" style="padding:16px 36px;border-radius:50px;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;border:none;cursor:pointer;font-size:16px;font-weight:800;">Get a fresh question every day →</button>
-            </div>
+            <div id="symptoms-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;"></div>
           </div>
         </section>
 
@@ -638,12 +596,11 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               Profile
             </a>
-            <a href="#" class="sidebar-link s-nav" data-page="subscribe" onclick="event.preventDefault();showPage('subscribe')" style="display:flex;align-items:center;gap:12px;padding:12px 14px;color:var(--accent);font-weight:700;font-size:14px;text-decoration:none;cursor:pointer;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              Membership <span id="premium-badge-nav" style="display:none;font-size:11px;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;padding:2px 8px;border-radius:20px;">👑 Premium</span>
-            </a>
           </nav>
           <div style="margin-top:auto;border-top:1px solid var(--border);padding-top:16px;">
+            <div id="sidebar-upgrade-wrap" style="margin-bottom:12px;display:none;">
+              <button onclick="showPage('subscribe')" style="width:100%;padding:12px 14px;border-radius:14px;border:none;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;font-weight:800;font-size:14px;cursor:pointer;">👑 <span data-i18n="Go Premium">Go Premium</span></button>
+            </div>
             <div style="display:flex;align-items:center;gap:10px;">
               <div id="sidebar-avatar-wrap" style="cursor:pointer;" onclick="showPage('profile')">
                 <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:900;border:2px solid #fff;box-shadow:0 2px 10px rgba(139,92,246,.3);" id="sidebar-avatar">U</div>
@@ -674,10 +631,6 @@
           <a href="#" onclick="event.preventDefault();showPage('profile')" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;text-decoration:none;color:var(--muted);font-size:10px;font-weight:700;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             <span data-i18n="Profile">Profile</span>
-          </a>
-          <a href="#" onclick="event.preventDefault();showPage('subscribe')" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;text-decoration:none;color:var(--muted);font-size:10px;font-weight:700;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            <span data-i18n="Membership">Membership</span>
           </a>
         </div>
       </div>
@@ -768,7 +721,7 @@ var translations = {
     'export_locked':'Journal export is a Premium feature.','journal_exported':'Journal exported successfully!',
     'post_btn':'Post','posts':'posts','letter_ready':'Your letter is ready to be written','days_left':'days left',
     'published_note':'✨ Your answer will be published publicly below so everyone can see it','Show Answers':'Show Answers','Hide Answers':'Hide Answers','Share:':'Share:','prompt_copied':'Prompt copied to clipboard','Journal Prompts':'Journal Prompts','on_this_day_empty':'No memory from this day yet','on_this_day_hint':'Keep writing — next year, you\'ll see how far you\'ve come on this exact day.','more_memories':'more from this day','No pressure':'No pressure','No streak guilt':'No streak guilt','Enable daily reminder':'Enable daily reminder','Daily reminder on':'Daily reminder on','reminder_enabled':'Daily reminder is on. You\'ll get a gentle nudge each day.','reminder_disabled':'Daily reminder is off.','reminder_denied':'Notifications are blocked. Allow them in your browser to enable reminders.','reminder_not_supported':'Your browser doesn\'t support notifications.','reminder_body':'Your 2-minute reflection is waiting. No pressure — just you. 💜','How are you feeling today?':'How are you feeling today?','mood_subtitle':'One tap. That is all. It takes 2 seconds and builds your emotional picture over time.','Your mood this week':'Your mood this week','mood_week_subtitle':'Last 7 days','mood_saved':'Mood saved','mood_none':'No check-in','mood_1':'Rough','mood_2':'Low','mood_3':'Okay','mood_4':'Good','mood_5':'Great',
-    'Log Out':'Log Out','You have been logged out':'You have been logged out','Loading...':'Loading...','Digital Store':'Digital Store','Gift yourself the tools to':'Gift yourself the tools to','grow':'grow','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.','Buy Now':'Buy Now','From Overthinking to Inner Peace':'From Overthinking to Inner Peace','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.','Bonus: 2nd eBook free':'Bonus: 2nd eBook free','60-day money-back guarantee':'60-day money-back guarantee','Daily Routines of Successful People':'Daily Routines of Successful People','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.','Mastering Stress Without Medication':'Mastering Stress Without Medication','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.'
+    'Log Out':'Log Out','Go Premium':'Go Premium','You have been logged out':'You have been logged out','Loading...':'Loading...','Digital Store':'Digital Store','Gift yourself the tools to':'Gift yourself the tools to','grow':'grow','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.','Buy Now':'Buy Now','From Overthinking to Inner Peace':'From Overthinking to Inner Peace','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.','Bonus: 2nd eBook free':'Bonus: 2nd eBook free','60-day money-back guarantee':'60-day money-back guarantee','Daily Routines of Successful People':'Daily Routines of Successful People','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.','Mastering Stress Without Medication':'Mastering Stress Without Medication','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.'
   },
   ar: {
     'HerScribe':'HerScribe','Reflect · Grow · Thrive':'تأمّل · تطوّر · ازدهر',
@@ -882,7 +835,7 @@ var translations = {
     'Changes to Terms':'التغييرات على الشروط','terms_9':'قد نقوم بتحديث هذه الشروط من وقت لآخر. استمرار استخدام التطبيق بعد نشر التغييرات يُعد قبولًا للشروط المحدثة.',
     'Get in touch':'تواصلي معنا','contact_intro':'لديكِ سؤال أو ملاحظة أو تحتاجين مساعدة؟ يسعدنا سماعك. تواصلي معنا في أي وقت.',
     'Email us':'راسلينا بالبريد','Response time':'وقت الرد','response_time_text':'خلال 48 ساعة','Subscription support':'دعم الاشتراك',
-    'Your Name':'اسمك','Your Email':'بريدك الإلكتروني','Your Message':'رسالتك','Write your message...':'اكتبي رسالتك...','Send Message':'إرسال الرسالة','message_sent':'تم إرسال رسالتك! سنرد عليك خلال 48 ساعة','Log Out':'تسجيل الخروج','You have been logged out':'تم تسجيل خروجك','Loading...':'جارٍ التحميل...','Digital Store':'متجر رقمي','Gift yourself the tools to':'أهدي نفسك أدوات','grow':'النمو','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'كتب إلكترونية وموارد مختارة لتهدئة ذهنك، وبناء العادات، والعيش بوضوح.','Buy Now':'اشترِ الآن','From Overthinking to Inner Peace':'من التفكير المفرط إلى السلام الداخلي','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'دليل عملي لتهدئة الأفكار المتسارعة، وإسكات الناقد الداخلي، واستعادة ذهن مركّز ومسالم.','Bonus: 2nd eBook free':'مكافأة: كتاب إلكتروني ثانٍ مجانًا','60-day money-back guarantee':'ضمان استرداد المال خلال 60 يومًا','Daily Routines of Successful People':'الروتين اليومي للناجحين','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'دليل عملي مُثبت للعادات اليومية لبناء الزخم وإنجاز المزيد بضغط أقل وتصميم طريقك نحو النجاح.','Mastering Stress Without Medication':'إتقان التعامل مع التوتر بدون أدوية','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'استراتيجيات طبيعية مدعومة علميًا للتحكم في التوتر وبناء المرونة النفسية والعثور على الهدوء دون الاعتماد على الأدوية.',
+    'Your Name':'اسمك','Your Email':'بريدك الإلكتروني','Your Message':'رسالتك','Write your message...':'اكتبي رسالتك...','Send Message':'إرسال الرسالة','message_sent':'تم إرسال رسالتك! سنرد عليك خلال 48 ساعة','Log Out':'تسجيل الخروج','Go Premium':'الترقية إلى بريميوم','You have been logged out':'تم تسجيل خروجك','Loading...':'جارٍ التحميل...','Digital Store':'متجر رقمي','Gift yourself the tools to':'أهدي نفسك أدوات','grow':'النمو','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'كتب إلكترونية وموارد مختارة لتهدئة ذهنك، وبناء العادات، والعيش بوضوح.','Buy Now':'اشترِ الآن','From Overthinking to Inner Peace':'من التفكير المفرط إلى السلام الداخلي','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'دليل عملي لتهدئة الأفكار المتسارعة، وإسكات الناقد الداخلي، واستعادة ذهن مركّز ومسالم.','Bonus: 2nd eBook free':'مكافأة: كتاب إلكتروني ثانٍ مجانًا','60-day money-back guarantee':'ضمان استرداد المال خلال 60 يومًا','Daily Routines of Successful People':'الروتين اليومي للناجحين','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'دليل عملي مُثبت للعادات اليومية لبناء الزخم وإنجاز المزيد بضغط أقل وتصميم طريقك نحو النجاح.','Mastering Stress Without Medication':'إتقان التعامل مع التوتر بدون أدوية','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'استراتيجيات طبيعية مدعومة علميًا للتحكم في التوتر وبناء المرونة النفسية والعثور على الهدوء دون الاعتماد على الأدوية.',
     'English':'English','العربية':'العربية','Français':'Français'
   },
   fr: {
@@ -997,7 +950,7 @@ var translations = {
     'Changes to Terms':'Modifications des conditions','terms_9':'Nous pouvons mettre à jour ces Conditions de temps à autre. L\'utilisation continue de l\'application après la publication des modifications vaut acceptation des Conditions mises à jour.',
     'Get in touch':'Entrons en contact','contact_intro':'Une question, un retour ou besoin d\'aide ? Nous serions ravies de vous entendre. Contactez-nous à tout moment.',
     'Email us':'Écrivez-nous','Response time':'Délai de réponse','response_time_text':'Sous 48 heures','Subscription support':'Assistance abonnement',
-    'Your Name':'Votre nom','Your Email':'Votre e-mail','Your Message':'Votre message','Write your message...':'Écrivez votre message...','Send Message':'Envoyer le message','message_sent':'Votre message a été envoyé ! Nous vous répondrons sous 48 heures.','Log Out':'Se déconnecter','You have been logged out':'Vous avez été déconnectée','Loading...':'Chargement...','Digital Store':'Boutique numérique','Gift yourself the tools to':'Offrez-vous les outils pour','grow':'grandir','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Des eBooks et ressources sélectionnés pour apaiser votre esprit, créer des habitudes et vivre avec clarté.','Buy Now':'Acheter maintenant','From Overthinking to Inner Peace':'De la surréflexion à la paix intérieure','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'Un guide pratique pour calmer les pensées qui s\'emballent, faire taire votre critique intérieur et retrouver un esprit concentré et paisible.','Bonus: 2nd eBook free':'Bonus : 2e eBook offert','60-day money-back guarantee':'Garantie de remboursement de 60 jours','Daily Routines of Successful People':'Les routines quotidiennes des personnes à succès','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'Un plan éprouvé de routines quotidiennes pour créer de l\'élan, accomplir plus avec moins de stress et dessiner votre chemin vers le succès.','Mastering Stress Without Medication':'Maîtriser le stress sans médicaments','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Des stratégies naturelles fondées sur la science pour prendre le contrôle du stress, renforcer votre résilience émotionnelle et retrouver le calme sans médicaments.',
+    'Your Name':'Votre nom','Your Email':'Votre e-mail','Your Message':'Votre message','Write your message...':'Écrivez votre message...','Send Message':'Envoyer le message','message_sent':'Votre message a été envoyé ! Nous vous répondrons sous 48 heures.','Log Out':'Se déconnecter','Go Premium':'Passer à Premium','You have been logged out':'Vous avez été déconnectée','Loading...':'Chargement...','Digital Store':'Boutique numérique','Gift yourself the tools to':'Offrez-vous les outils pour','grow':'grandir','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Des eBooks et ressources sélectionnés pour apaiser votre esprit, créer des habitudes et vivre avec clarté.','Buy Now':'Acheter maintenant','From Overthinking to Inner Peace':'De la surréflexion à la paix intérieure','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'Un guide pratique pour calmer les pensées qui s\'emballent, faire taire votre critique intérieur et retrouver un esprit concentré et paisible.','Bonus: 2nd eBook free':'Bonus : 2e eBook offert','60-day money-back guarantee':'Garantie de remboursement de 60 jours','Daily Routines of Successful People':'Les routines quotidiennes des personnes à succès','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'Un plan éprouvé de routines quotidiennes pour créer de l\'élan, accomplir plus avec moins de stress et dessiner votre chemin vers le succès.','Mastering Stress Without Medication':'Maîtriser le stress sans médicaments','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Des stratégies naturelles fondées sur la science pour prendre le contrôle du stress, renforcer votre résilience émotionnelle et retrouver le calme sans médicaments.',
     'English':'English','العربية':'العربية','Français':'Français'
   }
 };
@@ -1163,6 +1116,8 @@ function updateNav(){
     if(profileAvatar) profileAvatar.style.display = 'none';
     if(premiumBadge) premiumBadge.style.display = 'none';
   }
+  var upgradeWrap = document.getElementById('sidebar-upgrade-wrap');
+  if(upgradeWrap) upgradeWrap.style.display = (user && !isPremium(JSON.parse(user))) ? 'block' : 'none';
 }
 
 function dayKey(d){
@@ -1727,39 +1682,103 @@ function setDailyQuestions(){
   var dash = document.getElementById('dash-question');
   if(dash) dash.textContent = '"' + text + '"';
   setMorningMessage();
-  renderQuestionArchive();
+  renderSymptoms();
 }
 
-function renderQuestionArchive(){
-  var el = document.getElementById('questions-archive');
+var SYMPTOMS = [
+  {
+    icon:'🌪️', tag:'Overthinking', title:'Racing thoughts that won\u2019t stop',
+    desc:'Your mind replays the same worry on a loop, and \u201cjust relax\u201d makes it worse. Here\u2019s what actually helps.',
+    book:'overthinking'
+  },
+  {
+    icon:'😮‍💨', tag:'Stress', title:'Feeling tense and overwhelmed',
+    desc:'You carry pressure everywhere \u2014 work, home, the future \u2014 and your body feels it. Stress doesn\u2019t need to run your days.',
+    book:'stress'
+  },
+  {
+    icon:'🌙', tag:'Sleep', title:'Can\u2019t quiet your mind at night',
+    desc:'The moment your head hits the pillow, thoughts flood in. A calm mind at bedtime is a skill \u2014 you can learn it.',
+    book:'overthinking'
+  },
+  {
+    icon:'🫀', tag:'Anxiety', title:'A constant knot in your chest',
+    desc:'That tight feeling that follows you around. Anxiety is loud, but it can be gently turned down \u2014 starting today.',
+    book:'stress'
+  },
+  {
+    icon:'🌀', tag:'Burnout', title:'Drained, empty, running on fumes',
+    desc:'You give and give until there\u2019s nothing left. Burnout is not a weakness \u2014 it\u2019s a signal. Here\u2019s how to recover.',
+    book:'stress'
+  },
+  {
+    icon:'🧠', tag:'Clarity', title:'Feeling lost and scattered',
+    desc:'You want direction but everything feels foggy. A simple daily practice can pull your thoughts back into focus.',
+    book:'overthinking'
+  }
+];
+
+var SYMPTOM_ARTICLES = {
+  overthinking: {
+    read:'4 min read', title:'How to Stop Overthinking When Your Mind Won\u2019t Shut Up',
+    body:[
+      {h:'Overthinking isn\u2019t a flaw. It\u2019s a protective habit.', p:'Your brain replays worries because it believes thinking harder will keep you safe. The problem is, it never gets to the answer \u2014 it just loops. You don\u2019t need to silence the thoughts. You need to redirect them.'},
+      {h:'The fastest way to break the loop', p:'Put the thought somewhere it can\u2019t chase you. Write it down. When you see it on paper, it stops being an emergency inside your head and becomes just words you can look at. This single act \u2014 naming what\u2019s worrying you \u2014 is the same technique therapists use, and it works in minutes.'},
+      {h:'Give your worry a time limit', p:'Set aside 5 minutes a day \u2014 call it your \u201cworry time\u201d. Write everything that\u2019s circling your head into one list. Then close it. When a worry shows up later, tell yourself: \u201cIt\u2019s in the list, I\u2019ll look at it tomorrow.\u201d You\u2019ll be surprised how often the \u201curgent\u201d worry looks smaller the next morning.'},
+      {h:'What changes everything', p:'Overthinking shrinks when your mind has a calm, predictable place to land each day. A few minutes of structured reflection \u2014 not a blank journal, but a guided question \u2014 gives your thoughts a home. HerScribe gives you exactly that: one question, two minutes, every morning.'}
+    ]
+  },
+  stress: {
+    read:'4 min read', title:'How to Lower Stress When Everything Feels Heavy',
+    body:[
+      {h:'Stress is a signal, not a life sentence', p:'Your body raises the alarm when it feels overloaded. The mistake is to ignore the alarm and keep going. The smarter move is to respond \u2014 not by escaping your responsibilities, but by giving your nervous system small daily resets.'},
+      {h:'Breathe the way your body already knows', p:'When stress hits, your breathing gets shallow. Deliberately slowing your exhale \u2014 four counts in, six counts out \u2014 tells your body the danger is over. Do it for 60 seconds, three times a day, and you\u2019ll feel the difference by the end of the week.'},
+      {h:'Carve a quiet pocket into your day', p:'Stress builds when a day has no edges \u2014 work bleeds into home, home bleeds into night. Create one small boundary: a walk after dinner, a cup of tea in silence, two minutes of reflection before you open your phone in the morning. That pocket becomes your reset button.'},
+      {h:'The next step', p:'You don\u2019t need a vacation to lower stress. You need a sustainable way to reset daily. A guided meditation or a short written reflection \u2014 both built into HerScribe \u2014 are exactly the kind of small, repeatable resets that keep stress from piling up.'}
+    ]
+  }
+};
+
+function renderSymptoms(){
+  var el = document.getElementById('symptoms-grid');
   if(!el) return;
   var html = '';
-  for(var i = 0; i < DAILY_QUESTIONS.length; i++){
-    var q = DAILY_QUESTIONS[i].en;
-    html += '<div style="display:flex;align-items:flex-start;gap:14px;background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:18px 20px;transition:all .2s;" onmouseenter="this.style.borderColor=\'var(--accent)\'" onmouseleave="this.style.borderColor=\'var(--border)\'">' +
-      '<div style="width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + (i + 1) + '</div>' +
-      '<p style="flex:1;margin:0;font-size:15px;line-height:1.6;font-weight:600;color:var(--text);">' + q + '</p>' +
-      '<button onclick="copyQuestion(' + i + ')" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1.5px solid var(--border);background:var(--bg);color:var(--accent);font-size:12px;font-weight:800;cursor:pointer;flex-shrink:0;">📋 Copy</button>' +
+  for(var i = 0; i < SYMPTOMS.length; i++){
+    var s = SYMPTOMS[i];
+    html += '<div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;padding:28px;display:flex;flex-direction:column;transition:all .2s;" onmouseenter="this.style.borderColor=\'var(--accent)\';this.style.transform=\'translateY(-4px)\'" onmouseleave="this.style.borderColor=\'var(--border)\';this.style.transform=\'translateY(0)\'">' +
+      '<div style="width:52px;height:52px;border-radius:16px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px;">' + s.icon + '</div>' +
+      '<div style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">' + s.tag + '</div>' +
+      '<h3 style="font-size:17px;font-weight:800;margin:0 0 10px;color:var(--text);line-height:1.35;">' + s.title + '</h3>' +
+      '<p style="font-size:14px;color:var(--muted);line-height:1.65;margin:0 0 22px;flex:1;">' + s.desc + '</p>' +
+      '<button onclick="openSymptomArticle(' + i + ')" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:14px;border:none;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;font-weight:800;font-size:14px;cursor:pointer;">Read the article →</button>' +
     '</div>';
   }
   el.innerHTML = html;
 }
 
-function copyQuestion(i){
-  var q = DAILY_QUESTIONS[i].en;
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(q).then(function(){
-      showToast(t('prompt_copied'),'success');
-    });
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = q;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    showToast(t('prompt_copied'),'success');
-  }
+function openSymptomArticle(i){
+  var s = SYMPTOMS[i];
+  if(!s) return;
+  var a = SYMPTOM_ARTICLES[s.book];
+  if(!a) return;
+  var body = a.body.map(function(sec){
+    return '<h3 style="font-size:18px;font-weight:800;margin:0 0 10px;color:var(--text);">' + sec.h + '</h3><p style="font-size:15px;color:var(--muted);line-height:1.8;margin:0 0 20px;">' + sec.p + '</p>';
+  }).join('');
+  var bookLink = s.book === 'stress'
+    ? {url:'https://www.checkout-ds24.com/redir/633482/shenoo20/', title:'Mastering Stress Without Medication'}
+    : {url:'https://www.checkout-ds24.com/redir/633485/shenoo20/', title:'From Overthinking to Inner Peace'};
+  var modal = document.getElementById('article-modal');
+  document.getElementById('article-body').innerHTML =
+    '<div style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">' + s.tag + ' · ' + a.read + '</div>' +
+    '<h2 style="font-size:26px;font-weight:900;margin:0 0 20px;color:var(--text);">' + a.title + '</h2>' +
+    body +
+    '<div style="margin-top:28px;padding-top:22px;border-top:1.5px solid var(--border);background:var(--accent-soft);border-radius:18px;padding:24px;text-align:center;">' +
+      '<div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:6px;">📚 Want the full step-by-step guide?</div>' +
+      '<p style="font-size:13px;color:var(--muted);margin:0 0 16px;line-height:1.6;">This article is a taste. The complete framework lives in \u201c' + bookLink.title + '\u201d \u2014 written to walk you through it gently.</p>' +
+      '<a href="' + bookLink.url + '" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;padding:14px 28px;border-radius:50px;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:800;font-size:14px;">Get the book →</a>' +
+    '</div>';
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
 
 var MORNING_MESSAGES = {
