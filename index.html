@@ -56,11 +56,31 @@
     .hero-title{font-size:clamp(32px,5vw,56px)}
     .section-title{font-size:clamp(28px,4vw,42px)}
     @media (max-width:768px){
-      .hero-grid,.features-grid,.how-grid,.test-grid,.pricing-grid,.footer-grid,.auth-grid{grid-template-columns:1fr !important}
+      .hero-grid{grid-template-columns:1fr !important}
+      .features-grid,.how-grid,.test-grid,.pricing-grid,.products-grid,.footer-grid{grid-template-columns:repeat(2,1fr) !important;gap:14px !important}
+      .features-grid .feature-card{padding:18px !important}
+      .products-grid>div{padding:0 !important;border-radius:18px !important}
+      .products-grid>div>div:last-child{padding:16px !important}
+      .pricing-grid>div{padding:24px 20px !important}
       .auth-bg-side,.nav-desktop{display:none !important}
       .mobile-menu-btn{display:flex !important}
+      .auth-grid{grid-template-columns:1fr !important}
       .dashboard-layout{grid-template-columns:1fr !important}
       .sidebar{display:none !important}
+      section{padding:60px 16px !important}
+      .hero-title{font-size:34px !important}
+      .section-title{font-size:28px !important}
+      .footer-grid{grid-template-columns:repeat(2,1fr) !important}
+      .footer-grid>div:nth-child(1){grid-column:1 / -1}
+      #page-dashboard div[style*="display:grid"]{grid-template-columns:1fr 1fr !important}
+      #page-dashboard div[style*="grid-template-columns:2fr 1fr"]{grid-template-columns:1fr !important}
+      #page-dashboard div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr 1fr !important;gap:12px !important}
+      #page-dashboard .dash-answers-item{grid-template-columns:1fr !important}
+    }
+    @media (max-width:400px){
+      .features-grid,.how-grid,.test-grid,.products-grid{grid-template-columns:1fr !important}
+      .pricing-grid{grid-template-columns:1fr !important}
+      .footer-grid{grid-template-columns:1fr 1fr !important;gap:16px !important}
     }
     @media (min-width:769px) and (max-width:1024px){
       .features-grid,.how-grid,.test-grid,.footer-grid{grid-template-columns:repeat(2,1fr) !important}
