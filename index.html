@@ -78,9 +78,14 @@
       #page-dashboard .dash-answers-item{grid-template-columns:1fr !important}
     }
     @media (max-width:400px){
-      .features-grid,.how-grid,.test-grid,.products-grid{grid-template-columns:1fr !important}
-      .pricing-grid{grid-template-columns:1fr !important}
-      .footer-grid{grid-template-columns:1fr 1fr !important;gap:16px !important}
+      .features-grid,.how-grid,.test-grid,.products-grid,.pricing-grid{grid-template-columns:repeat(2,1fr) !important;gap:10px !important}
+      .features-grid .feature-card{padding:14px !important}
+      .features-grid .feature-card h3{font-size:15px !important}
+      .features-grid .feature-card p{font-size:12px !important}
+      .products-grid>div>div:last-child{padding:12px !important}
+      .pricing-grid>div{padding:18px 14px !important}
+      .pricing-grid>div>div:nth-child(2){font-size:38px !important}
+      .footer-grid{grid-template-columns:1fr 1fr !important;gap:12px !important}
     }
     @media (min-width:769px) and (max-width:1024px){
       .features-grid,.how-grid,.test-grid,.footer-grid{grid-template-columns:repeat(2,1fr) !important}
