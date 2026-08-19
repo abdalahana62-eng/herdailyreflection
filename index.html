@@ -90,6 +90,8 @@
       .auth-grid{grid-template-columns:1fr !important}
       .dashboard-layout{grid-template-columns:1fr !important}
       .sidebar{display:none !important}
+      .mobile-bottom-nav{display:block !important}
+      #page-content{padding:24px 16px 110px !important}
       section{padding:60px 16px !important}
       .hero-title{font-size:34px !important}
       .section-title{font-size:28px !important}
@@ -654,6 +656,30 @@
           </div>
         </aside>
         <div id="page-content" style="padding:40px 32px;"></div>
+      </div>
+      <div class="mobile-bottom-nav" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1.5px solid var(--border);z-index:999;padding:8px 4px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -6px 25px rgba(30,27,75,.08);">
+        <div style="display:flex;justify-content:space-around;align-items:center;">
+          <a href="#" onclick="event.preventDefault();showPage('home')" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;text-decoration:none;color:var(--muted);font-size:10px;font-weight:700;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            <span data-i18n="Home">Home</span>
+          </a>
+          <a href="#" onclick="event.preventDefault();showPage('dashboard')" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;text-decoration:none;color:var(--accent);font-size:10px;font-weight:800;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span data-i18n="Dashboard">Dashboard</span>
+          </a>
+          <a href="#" onclick="event.preventDefault();showPage('insights')" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;text-decoration:none;color:var(--muted);font-size:10px;font-weight:700;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+            <span data-i18n="Insights">Insights</span>
+          </a>
+          <a href="#" onclick="event.preventDefault();showPage('profile')" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;text-decoration:none;color:var(--muted);font-size:10px;font-weight:700;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-i18n="Profile">Profile</span>
+          </a>
+          <a href="#" onclick="event.preventDefault();showPage('subscribe')" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;text-decoration:none;color:var(--muted);font-size:10px;font-weight:700;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span data-i18n="Membership">Membership</span>
+          </a>
+        </div>
       </div>
     </div>
 
