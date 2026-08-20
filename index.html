@@ -2374,6 +2374,11 @@ c.innerHTML = `
         <p id="dash-morning-msg" style="font-size:14px;font-style:italic;font-weight:600;color:var(--accent2);line-height:1.6;margin:0 0 16px;">"</p>
         <h3 id="dash-question" style="font-size:22px;font-weight:800;line-height:1.4;margin-bottom:20px;">` + '"' + dailyQuestionText() + '"' + `</h3>
         <textarea id="dash-reflection" class="input-field" data-ph="Take a deep breath and write freely..." style="width:100%;min-height:120px;padding:16px;border-radius:16px;border:1.5px solid var(--border);font-size:15px;resize:none;" placeholder="Take a deep breath and write freely..."></textarea>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap;">
+          <button id="dash-mode-anon" onclick="setDashShareMode('anon')" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:50px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;">🕶️ ` + t('Post Anonymously') + `</button>
+          <button id="dash-mode-name" onclick="setDashShareMode('name')" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:50px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;">👤 ` + t('With My Name') + `</button>
+          <span id="dash-share-mode-hint" style="font-size:12px;color:var(--muted);font-weight:600;">🕶️ <span data-i18n="anon_mode_hint">Your answer will be published publicly below as Anonymous</span></span>
+        </div>
         <div style="display:flex;justify-content:flex-end;margin-top:16px;">
           <button onclick="saveDashReflection()" class="btn-primary" style="padding:12px 24px;border-radius:12px;background:var(--accent);color:#fff;border:none;cursor:pointer;">` + t('Save Reflection') + `</button>
         </div>
@@ -2413,6 +2418,7 @@ c.innerHTML = `
     </div>
     ` + monthlySummaryHtml + `
   `;
+  setDashShareMode(getDashShareMode());
 }
 
 function saveDashReflection(){
@@ -2430,9 +2436,9 @@ function saveDashReflection(){
   user.reflections.push({date: new Date().toISOString(), text: ta.value.trim(), words: wordCount});
   saveUserData(user);
 
-  // Publish the answer publicly
+  // Publish the answer publicly. Mode decides: own name or Anonymous
   addPublicAnswer({
-    name: user.name || 'Anonymous',
+    name: getDashShareMode() === 'name' ? (user.name || 'Anonymous') : t('Anonymous'),
     text: ta.value.trim(),
     date: new Date().toISOString(),
     likes: []
@@ -2442,6 +2448,23 @@ function saveDashReflection(){
   ta.value = '';
   var alist = document.getElementById('dash-answers-list');
   if(alist){ alist.style.display = 'block'; var abtn = document.getElementById('dash-answers-toggle'); if(abtn) abtn.innerHTML = t('Hide Answers') + ' 🙈'; }
+}
+
+function getDashShareMode(){
+  return localStorage.getItem('hdr_dash_share_mode') || 'anon';
+}
+
+function setDashShareMode(mode){
+  localStorage.setItem('hdr_dash_share_mode', mode);
+  var anonBtn = document.getElementById('dash-mode-anon');
+  var nameBtn = document.getElementById('dash-mode-name');
+  var hint = document.getElementById('dash-share-mode-hint');
+  if(anonBtn){ anonBtn.style.background = mode === 'anon' ? 'var(--accent)' : 'var(--bg)'; anonBtn.style.color = mode === 'anon' ? '#fff' : 'var(--muted)'; }
+  if(nameBtn){ nameBtn.style.background = mode === 'name' ? 'var(--accent)' : 'var(--bg)'; nameBtn.style.color = mode === 'name' ? '#fff' : 'var(--muted)'; }
+  if(hint) hint.innerHTML = mode === 'anon'
+    ? '🕶️ <span data-i18n="anon_mode_hint">Your answer will be published publicly below as Anonymous</span>'
+    : '👤 <span data-i18n="name_mode_hint">Your answer will be published publicly below with your name</span>';
+  applyTranslations();
 }
 
 function shareQuestion(platform){
