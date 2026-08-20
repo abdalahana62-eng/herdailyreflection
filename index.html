@@ -1687,32 +1687,32 @@ function setDailyQuestions(){
 
 var SYMPTOMS = [
   {
-    icon:'🌿', tag:'Overthinking', title:'Racing thoughts that won\u2019t stop',
+    icon:'🌪️', tag:'Overthinking', title:'Racing thoughts that won\u2019t stop',
     desc:'Your mind replays the same worry on a loop, and \u201cjust relax\u201d makes it worse. Here\u2019s what actually helps.',
     book:'overthinking'
   },
   {
-    icon:'📝', tag:'Stress', title:'Feeling tense and overwhelmed',
+    icon:'😮‍💨', tag:'Stress', title:'Feeling tense and overwhelmed',
     desc:'You carry pressure everywhere \u2014 work, home, the future \u2014 and your body feels it. Stress doesn\u2019t need to run your days.',
     book:'stress'
   },
   {
-    icon:'🌅', tag:'Sleep', title:'Can\u2019t quiet your mind at night',
+    icon:'🌙', tag:'Sleep', title:'Can\u2019t quiet your mind at night',
     desc:'The moment your head hits the pillow, thoughts flood in. A calm mind at bedtime is a skill \u2014 you can learn it.',
     book:'overthinking'
   },
   {
-    icon:'🌿', tag:'Anxiety', title:'A constant knot in your chest',
+    icon:'🫀', tag:'Anxiety', title:'A constant knot in your chest',
     desc:'That tight feeling that follows you around. Anxiety is loud, but it can be gently turned down \u2014 starting today.',
     book:'stress'
   },
   {
-    icon:'📝', tag:'Burnout', title:'Drained, empty, running on fumes',
+    icon:'🌀', tag:'Burnout', title:'Drained, empty, running on fumes',
     desc:'You give and give until there\u2019s nothing left. Burnout is not a weakness \u2014 it\u2019s a signal. Here\u2019s how to recover.',
     book:'stress'
   },
   {
-    icon:'🌅', tag:'Clarity', title:'Feeling lost and scattered',
+    icon:'🧠', tag:'Clarity', title:'Feeling lost and scattered',
     desc:'You want direction but everything feels foggy. A simple daily practice can pull your thoughts back into focus.',
     book:'overthinking'
   }
@@ -1742,25 +1742,15 @@ var SYMPTOM_ARTICLES = {
 function renderSymptoms(){
   var el = document.getElementById('symptoms-grid');
   if(!el) return;
-  var icons = [
-    '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>',
-    '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 9-9c0 2-1 3-2.5 3H15a2 2 0 0 0-2 2v1a3 3 0 0 1-3 3z"/><path d="M7.5 10.5h.01"/><path d="M12 10.5h.01"/><path d="M16.5 10.5h.01"/></svg>',
-    '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
-    '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/></svg>',
-    '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>',
-    '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2h5"/><path d="M10 2v6a5 5 0 0 0 4 4.9V21a1 1 0 0 0 2 0v-6a5 5 0 0 0 4-4.9V2h-1.5"/><path d="M7 2h1.5"/><path d="M15.5 2H17"/></svg>'
-  ];
-  var gradients = ['var(--accent-soft)','var(--accent2-soft)','var(--accent-soft)','var(--accent2-soft)','var(--accent-soft)','var(--accent2-soft)'];
-  var colors = ['var(--accent)','var(--accent2)','var(--accent)','var(--accent2)','var(--accent)','var(--accent2)'];
   var html = '';
   for(var i = 0; i < SYMPTOMS.length; i++){
     var s = SYMPTOMS[i];
-    html += '<div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;padding:28px;display:flex;flex-direction:column;transition:all .2s;" onmouseenter="this.style.borderColor=\'var(--accent)\';this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 20px 50px rgba(139,92,246,.12)\'" onmouseleave="this.style.borderColor=\'var(--border)\';this.style.transform=\'translateY(0)\';this.style.boxShadow=\'none\'">' +
-      '<div style="width:52px;height:52px;border-radius:14px;background:' + gradients[i % gradients.length] + ';display:flex;align-items:center;justify-content:center;color:' + colors[i % colors.length] + ';margin-bottom:20px;">' + icons[i % icons.length] + '</div>' +
-      '<div style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">' + s.tag + '</div>' +
-      '<h3 style="font-size:18px;font-weight:800;margin:0 0 10px;color:var(--text);line-height:1.4;">' + s.title + '</h3>' +
-      '<p style="font-size:14px;color:var(--muted);line-height:1.65;margin:0 0 20px;flex:1;">' + s.desc + '</p>' +
-      '<a href="#" onclick="event.preventDefault();openSymptomArticle(' + i + ')" style="color:var(--accent);font-weight:800;font-size:14px;text-decoration:none;">Read the article →</a>' +
+    html += '<div style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;padding:28px;display:flex;flex-direction:column;transition:all .2s;" onmouseenter="this.style.borderColor=\'var(--accent)\';this.style.transform=\'translateY(-4px)\'" onmouseleave="this.style.borderColor=\'var(--border)\';this.style.transform=\'translateY(0)\'">' +
+      '<div style="width:52px;height:52px;border-radius:16px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px;">' + s.icon + '</div>' +
+      '<div style="font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">' + s.tag + '</div>' +
+      '<h3 style="font-size:17px;font-weight:800;margin:0 0 10px;color:var(--text);line-height:1.35;">' + s.title + '</h3>' +
+      '<p style="font-size:14px;color:var(--muted);line-height:1.65;margin:0 0 22px;flex:1;">' + s.desc + '</p>' +
+      '<button onclick="openSymptomArticle(' + i + ')" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:14px;border:none;background:linear-gradient(100deg,var(--accent),var(--accent2));color:#fff;font-weight:800;font-size:14px;cursor:pointer;">Read the article →</button>' +
     '</div>';
   }
   el.innerHTML = html;
