@@ -62,6 +62,7 @@
     .sidebar-link{transition:all .2s ease;border-radius:12px}
     .sidebar-link:hover{background:var(--accent-soft);color:var(--accent)}
     .sidebar-link.active{background:var(--accent);color:#fff}
+    .auth-bg{background:linear-gradient(135deg,#7c3aed,#c084fc)}
     .hero-title{font-size:clamp(32px,5vw,56px)}
     .section-title{font-size:clamp(28px,4vw,42px)}
     @media (max-width:768px){
@@ -271,7 +272,7 @@
             <div class="feature-card" style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;padding:40px;text-align:center;">
               <div style="width:72px;height:72px;border-radius:20px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;color:var(--accent2);font-size:32px;font-weight:900;margin:0 auto 24px;">2</div>
               <h3 style="font-size:22px;font-weight:800;margin-bottom:12px;">Reflect & Write</h3>
-              <p style="color:var(--muted);line-height:1.7;font-size:15px;">Take just 5 minutes to write your answer in your private, secure personal journal.</p>
+              <p style="color:var(--muted);line-height:1.7;font-size:15px;">Take just 2 minutes to write your answer in your private, secure personal journal.</p>
             </div>
             <div class="feature-card" style="background:var(--card);border:1.5px solid var(--border);border-radius:24px;padding:40px;text-align:center;">
               <div style="width:72px;height:72px;border-radius:20px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:32px;font-weight:900;margin:0 auto 24px;">3</div>
@@ -735,7 +736,7 @@ var translations = {
     'export_locked':'Journal export is a Premium feature.','journal_exported':'Journal exported successfully!',
     'post_btn':'Post','posts':'posts','letter_ready':'Your letter is ready to be written','days_left':'days left',
     'published_note':'✨ Your answer will be published publicly below so everyone can see it','anon_mode_hint':'Your answer will be published publicly below as Anonymous','name_mode_hint':'Your answer will be published publicly below with your name','Show Answers':'Show Answers','Hide Answers':'Hide Answers','Share:':'Share:','prompt_copied':'Prompt copied to clipboard','Journal Prompts':'Journal Prompts','on_this_day_empty':'No memory from this day yet','on_this_day_hint':'Keep writing — next year, you\'ll see how far you\'ve come on this exact day.','more_memories':'more from this day','No pressure':'No pressure','No streak guilt':'No streak guilt','Enable daily reminder':'Enable daily reminder','Daily reminder on':'Daily reminder on','reminder_enabled':'Daily reminder is on. You\'ll get a gentle nudge each day.','reminder_disabled':'Daily reminder is off.','reminder_denied':'Notifications are blocked. Allow them in your browser to enable reminders.','reminder_not_supported':'Your browser doesn\'t support notifications.','reminder_body':'Your 2-minute reflection is waiting. No pressure — just you. 💜','How are you feeling today?':'How are you feeling today?','mood_subtitle':'One tap. That is all. It takes 2 seconds and builds your emotional picture over time.','Your mood this week':'Your mood this week','mood_week_subtitle':'Last 7 days','mood_saved':'Mood saved','mood_none':'No check-in','mood_1':'Rough','mood_2':'Low','mood_3':'Okay','mood_4':'Good','mood_5':'Great',
-    'Log Out':'Log Out','Go Premium':'Go Premium','You have been logged out':'You have been logged out','Loading...':'Loading...','Digital Store':'Digital Store','Gift yourself the tools to':'Gift yourself the tools to','grow':'grow','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.','Buy Now':'Buy Now','From Overthinking to Inner Peace':'From Overthinking to Inner Peace','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.','Bonus: 2nd eBook free':'Bonus: 2nd eBook free','60-day money-back guarantee':'60-day money-back guarantee','Daily Routines of Successful People':'Daily Routines of Successful People','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.','Mastering Stress Without Medication':'Mastering Stress Without Medication','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.'
+    'Log Out':'Log Out','Are you sure you want to log out?':'Are you sure you want to log out?','Go Premium':'Go Premium','You have been logged out':'You have been logged out','Loading...':'Loading...','Digital Store':'Digital Store','Gift yourself the tools to':'Gift yourself the tools to','grow':'grow','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.','Buy Now':'Buy Now','From Overthinking to Inner Peace':'From Overthinking to Inner Peace','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.','Bonus: 2nd eBook free':'Bonus: 2nd eBook free','60-day money-back guarantee':'60-day money-back guarantee','Daily Routines of Successful People':'Daily Routines of Successful People','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.','Mastering Stress Without Medication':'Mastering Stress Without Medication','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.'
   },
   ar: {
     'HerScribe':'HerScribe','Reflect · Grow · Thrive':'تأمّل · تطوّر · ازدهر',
@@ -752,7 +753,7 @@ var translations = {
     'Receive Daily Question':'استقبال سؤال يومي',
     'Every morning, discover a thoughtful question designed to inspire deep reflection.':'كل صباح، اكتشفي سؤالًا عميقًا مصممًا لإلهام التأمل.',
     'Reflect & Write':'تأملي واكتبي',
-    'Take just 5 minutes to write your answer in your private, secure personal journal.':'خصصي 5 دقائق فقط لكتابة إجابتك في مذكرتك الشخصية الآمنة.',
+    'Take just 2 minutes to write your answer in your private, secure personal journal.':'خصصي دقيقتين فقط لكتابة إجابتك في مذكرتك الشخصية الآمنة.',
     'Grow & Track':'تطوري وتتبعي',
     'Watch your patterns emerge through beautiful insights. Celebrate your growth journey.':'راقبي أنماطك تظهر من خلال رؤى جميلة. احتفلي برحلة نموك.',
     'Powerful Features':'مميزات قوية','Everything you need to':'كل ما تحتاجينه لـ','thrive':'الازدهار',
@@ -849,7 +850,7 @@ var translations = {
     'Changes to Terms':'التغييرات على الشروط','terms_9':'قد نقوم بتحديث هذه الشروط من وقت لآخر. استمرار استخدام التطبيق بعد نشر التغييرات يُعد قبولًا للشروط المحدثة.',
     'Get in touch':'تواصلي معنا','contact_intro':'لديكِ سؤال أو ملاحظة أو تحتاجين مساعدة؟ يسعدنا سماعك. تواصلي معنا في أي وقت.',
     'Email us':'راسلينا بالبريد','Response time':'وقت الرد','response_time_text':'خلال 48 ساعة','Subscription support':'دعم الاشتراك',
-    'Your Name':'اسمك','Your Email':'بريدك الإلكتروني','Your Message':'رسالتك','Write your message...':'اكتبي رسالتك...','Send Message':'إرسال الرسالة','message_sent':'تم إرسال رسالتك! سنرد عليك خلال 48 ساعة','Log Out':'تسجيل الخروج','Go Premium':'الترقية إلى بريميوم','You have been logged out':'تم تسجيل خروجك','Loading...':'جارٍ التحميل...','Digital Store':'متجر رقمي','Gift yourself the tools to':'أهدي نفسك أدوات','grow':'النمو','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'كتب إلكترونية وموارد مختارة لتهدئة ذهنك، وبناء العادات، والعيش بوضوح.','Buy Now':'اشترِ الآن','From Overthinking to Inner Peace':'من التفكير المفرط إلى السلام الداخلي','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'دليل عملي لتهدئة الأفكار المتسارعة، وإسكات الناقد الداخلي، واستعادة ذهن مركّز ومسالم.','Bonus: 2nd eBook free':'مكافأة: كتاب إلكتروني ثانٍ مجانًا','60-day money-back guarantee':'ضمان استرداد المال خلال 60 يومًا','Daily Routines of Successful People':'الروتين اليومي للناجحين','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'دليل عملي مُثبت للعادات اليومية لبناء الزخم وإنجاز المزيد بضغط أقل وتصميم طريقك نحو النجاح.','Mastering Stress Without Medication':'إتقان التعامل مع التوتر بدون أدوية','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'استراتيجيات طبيعية مدعومة علميًا للتحكم في التوتر وبناء المرونة النفسية والعثور على الهدوء دون الاعتماد على الأدوية.',
+    'Your Name':'اسمك','Your Email':'بريدك الإلكتروني','Your Message':'رسالتك','Write your message...':'اكتبي رسالتك...','Send Message':'إرسال الرسالة','message_sent':'تم إرسال رسالتك! سنرد عليك خلال 48 ساعة','Log Out':'تسجيل الخروج','Are you sure you want to log out?':'هل أنت متأكد أنك تريد تسجيل الخروج؟','Go Premium':'الترقية إلى بريميوم','You have been logged out':'تم تسجيل خروجك','Loading...':'جارٍ التحميل...','Digital Store':'متجر رقمي','Gift yourself the tools to':'أهدي نفسك أدوات','grow':'النمو','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'كتب إلكترونية وموارد مختارة لتهدئة ذهنك، وبناء العادات، والعيش بوضوح.','Buy Now':'اشترِ الآن','From Overthinking to Inner Peace':'من التفكير المفرط إلى السلام الداخلي','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'دليل عملي لتهدئة الأفكار المتسارعة، وإسكات الناقد الداخلي، واستعادة ذهن مركّز ومسالم.','Bonus: 2nd eBook free':'مكافأة: كتاب إلكتروني ثانٍ مجانًا','60-day money-back guarantee':'ضمان استرداد المال خلال 60 يومًا','Daily Routines of Successful People':'الروتين اليومي للناجحين','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'دليل عملي مُثبت للعادات اليومية لبناء الزخم وإنجاز المزيد بضغط أقل وتصميم طريقك نحو النجاح.','Mastering Stress Without Medication':'إتقان التعامل مع التوتر بدون أدوية','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'استراتيجيات طبيعية مدعومة علميًا للتحكم في التوتر وبناء المرونة النفسية والعثور على الهدوء دون الاعتماد على الأدوية.',
     'English':'English','العربية':'العربية','Français':'Français'
   },
   fr: {
@@ -867,7 +868,7 @@ var translations = {
     'Receive Daily Question':'Recevoir la question du jour',
     'Every morning, discover a thoughtful question designed to inspire deep reflection.':'Chaque matin, découvrez une question profonde conçue pour inspirer la réflexion.',
     'Reflect & Write':'Réfléchissez et écrivez',
-    'Take just 5 minutes to write your answer in your private, secure personal journal.':'Prenez 5 minutes pour écrire votre réponse dans votre journal personnel sécurisé.',
+    'Take just 2 minutes to write your answer in your private, secure personal journal.':'Prenez 2 minutes pour écrire votre réponse dans votre journal personnel sécurisé.',
     'Grow & Track':'Grandissez et suivez',
     'Watch your patterns emerge through beautiful insights. Celebrate your growth journey.':'Observez vos schémas émerger grâce à de belles perspectives. Célébrez votre chemin de croissance.',
     'Powerful Features':'Fonctionnalités puissantes','Everything you need to':'Tout ce dont vous avez besoin pour','thrive':'prospérer',
@@ -964,7 +965,7 @@ var translations = {
     'Changes to Terms':'Modifications des conditions','terms_9':'Nous pouvons mettre à jour ces Conditions de temps à autre. L\'utilisation continue de l\'application après la publication des modifications vaut acceptation des Conditions mises à jour.',
     'Get in touch':'Entrons en contact','contact_intro':'Une question, un retour ou besoin d\'aide ? Nous serions ravies de vous entendre. Contactez-nous à tout moment.',
     'Email us':'Écrivez-nous','Response time':'Délai de réponse','response_time_text':'Sous 48 heures','Subscription support':'Assistance abonnement',
-    'Your Name':'Votre nom','Your Email':'Votre e-mail','Your Message':'Votre message','Write your message...':'Écrivez votre message...','Send Message':'Envoyer le message','message_sent':'Votre message a été envoyé ! Nous vous répondrons sous 48 heures.','Log Out':'Se déconnecter','Go Premium':'Passer à Premium','You have been logged out':'Vous avez été déconnectée','Loading...':'Chargement...','Digital Store':'Boutique numérique','Gift yourself the tools to':'Offrez-vous les outils pour','grow':'grandir','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Des eBooks et ressources sélectionnés pour apaiser votre esprit, créer des habitudes et vivre avec clarté.','Buy Now':'Acheter maintenant','From Overthinking to Inner Peace':'De la surréflexion à la paix intérieure','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'Un guide pratique pour calmer les pensées qui s\'emballent, faire taire votre critique intérieur et retrouver un esprit concentré et paisible.','Bonus: 2nd eBook free':'Bonus : 2e eBook offert','60-day money-back guarantee':'Garantie de remboursement de 60 jours','Daily Routines of Successful People':'Les routines quotidiennes des personnes à succès','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'Un plan éprouvé de routines quotidiennes pour créer de l\'élan, accomplir plus avec moins de stress et dessiner votre chemin vers le succès.','Mastering Stress Without Medication':'Maîtriser le stress sans médicaments','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Des stratégies naturelles fondées sur la science pour prendre le contrôle du stress, renforcer votre résilience émotionnelle et retrouver le calme sans médicaments.',
+    'Your Name':'Votre nom','Your Email':'Votre e-mail','Your Message':'Votre message','Write your message...':'Écrivez votre message...','Send Message':'Envoyer le message','message_sent':'Votre message a été envoyé ! Nous vous répondrons sous 48 heures.','Log Out':'Se déconnecter','Are you sure you want to log out?':'Êtes-vous sûre de vouloir vous déconnecter ?','Go Premium':'Passer à Premium','You have been logged out':'Vous avez été déconnectée','Loading...':'Chargement...','Digital Store':'Boutique numérique','Gift yourself the tools to':'Offrez-vous les outils pour','grow':'grandir','Handpicked eBooks and resources to quiet your mind, build habits, and live with clarity.':'Des eBooks et ressources sélectionnés pour apaiser votre esprit, créer des habitudes et vivre avec clarté.','Buy Now':'Acheter maintenant','From Overthinking to Inner Peace':'De la surréflexion à la paix intérieure','A practical guide to calm racing thoughts, quiet your inner critic, and reclaim a focused, peaceful mind.':'Un guide pratique pour calmer les pensées qui s\'emballent, faire taire votre critique intérieur et retrouver un esprit concentré et paisible.','Bonus: 2nd eBook free':'Bonus : 2e eBook offert','60-day money-back guarantee':'Garantie de remboursement de 60 jours','Daily Routines of Successful People':'Les routines quotidiennes des personnes à succès','A proven blueprint of daily routines to build momentum, get more done with less stress, and design your path to success.':'Un plan éprouvé de routines quotidiennes pour créer de l\'élan, accomplir plus avec moins de stress et dessiner votre chemin vers le succès.','Mastering Stress Without Medication':'Maîtriser le stress sans médicaments','Science-backed, natural strategies to take control of stress, build emotional resilience, and find calm without relying on medication.':'Des stratégies naturelles fondées sur la science pour prendre le contrôle du stress, renforcer votre résilience émotionnelle et retrouver le calme sans médicaments.',
     'English':'English','العربية':'العربية','Français':'Français'
   }
 };
@@ -1644,6 +1645,7 @@ function doLogin(){
 }
 
 function logout(){
+  if(!confirm(t('Are you sure you want to log out?'))) return;
   localStorage.removeItem('hdr_user');
   localStorage.removeItem('hdr_last_page');
   updateNav();
@@ -2942,11 +2944,27 @@ var communityPostMode = 'anon';
 function getCommunityPosts(){
   var saved = localStorage.getItem('hdr_community_posts');
   var posts = saved ? JSON.parse(saved) : [];
+  if(posts.length === 0){
+    posts = getSeedPosts();
+  }
   posts.forEach(function(p){
     if(p.anon === undefined) p.anon = true;
     (p.comments || []).forEach(function(cm){ if(cm.anon === undefined) cm.anon = true; });
   });
   return posts;
+}
+
+function getSeedPosts(){
+  var daysAgo = function(n){
+    var d = new Date(Date.now() - n*86400000);
+    return d.toISOString();
+  };
+  return [
+    {id:'seed1', anon:true, name:'', text:'Started journaling a week ago. I finally said out loud that I am allowed to take up space. That one sentence changed how I walk into every room.', date:daysAgo(1), likes:[], comments:[{name:'', anon:true, text:'This hit me hard. Thank you for sharing. 🙏', date:daysAgo(0)}, {name:'', anon:true, text:'That is a sentence I need to write down too.', date:daysAgo(0)}], cat:'Self-Discovery'},
+    {id:'seed2', anon:false, name:'Layla M.', text:'I stopped chasing the 5 AM wake-up routine. Now I just write for two quiet minutes before my coffee and my whole day feels lighter.', date:daysAgo(2), likes:[], comments:[{name:'', anon:true, text:'Same! Two minutes beats zero minutes every single time.', date:daysAgo(1)}], cat:'Growth'},
+    {id:'seed3', anon:true, name:'', text:'Today the question asked about a fear I kept hidden. I wrote it down instead of pushing it away, and it lost half its power.', date:daysAgo(3), likes:[], comments:[], cat:'Self-Discovery'},
+    {id:'seed4', anon:false, name:'Sara K.', text:'My first letter to my future self made me cry. In the best way. Writing honestly is the bravest thing I do all week.', date:daysAgo(5), likes:[], comments:[], cat:'Growth'}
+  ];
 }
 
 function saveCommunityPosts(posts){
