@@ -1426,6 +1426,12 @@ function updateAnswerLikes(id, likes, callback){
   });
 }
 
+function isSameLocalDay(dateStr, ref){
+  var d = new Date(dateStr);
+  var r = ref || new Date();
+  return d.getFullYear() === r.getFullYear() && d.getMonth() === r.getMonth() && d.getDate() === r.getDate();
+}
+
 function loadHeroAnswers(){
   var list = document.getElementById('hero-answers-list');
   var count = document.getElementById('hero-answers-count');
@@ -1435,6 +1441,7 @@ function loadHeroAnswers(){
   list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('Loading...') + '</div>';
   
   getPublicAnswers(function(answers){
+    answers = answers.filter(function(a){ return isSameLocalDay(a.date); });
     if(answers.length === 0){
       list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('No answers yet. Be the first to answer!') + '</div>';
       if(count) count.textContent = '0 ' + t('answers');
@@ -2510,6 +2517,7 @@ function loadDashAnswers(){
   list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('Loading...') + '</div>';
   
   getPublicAnswers(function(answers){
+    answers = answers.filter(function(a){ return isSameLocalDay(a.date); });
     if(answers.length === 0){
       list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:14px;">' + t('No answers yet. Be the first to answer!') + '</div>';
       if(count) count.textContent = '0 ' + t('answers');
